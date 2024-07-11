@@ -4,23 +4,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Poovarasan S">
+  <meta name="description"
+    content="Poovarasan S's Portfolio studying in UVCE as B.Tech in Information Science and Engineering.">
+  <meta name="keywords"
+    content="Poovarasan Portfolio,poovarasan portfolio,PoovarasanPortfolio,poovarasanportfolio,Poovarasan S,poovarasan,UVCE,Uvce,uvce,poovarasansivakumar2003,Poovarasansivakumar2003">
   <title>Poovarasan Portfolio</title>
   <link rel="icon" href=".\assets\img\favicon.png" type="favicon">
   <link rel="stylesheet" href=".\assets\css\style.css">
+
 </head>
 
 
-<body>
+<body onload="loadfun()">
+  <div id="loading">
+    <h2>
+      <span class="let1">l</span>
+      <span class="let2">o</span>
+      <span class="let3">a</span>
+      <span class="let4">d</span>
+      <span class="let5">i</span>
+      <span class="let6">n</span>
+      <span class="let7">g</span>
+    </h2>
+  </div>
+  <div id="top"></div>
   <nav>
-    <div class="nav_logo"><img src=".\assets\img\favicon.png" alt="logo"><p>Poovarasan's Portfolio</p></div>
-    <div class="nav_menu">
-      <a href="#">Home</a>
-      <a href="#">About Me</a>
-      <a href="#">Contact Me</a>
-      <a href="login.html">Login</a>
+    <div class="nav_logo"><img src=".\assets\img\favicon.png" alt="logo">
+      <h2 style="cursor: default; color:black;">Poovarasan's Portfolio</h2>
+    </div>
+    <div class="nav_menu_list">
+      <a href="#home" class="nav_menu">Home</a>
+      <a href="#abt_me" class="nav_menu">About Me</a>
+      <a href="#project" class="nav_menu">Projects</a>
+      <a href="#feedback" class="nav_menu">Feedback</a>
+      <a href="#contact_me" class="nav_menu">Contact Me</a>
+      <a href="login.html" class="nav_menu">Login</a>
+    </div>
+    <img src="./assets/img/hamburger.png" alt="hamburger" class="hamburger">
+    <div class="arrows-cross">
+      <h2 style="font-weight: 500;">X</h2>
     </div>
   </nav>
+
+  <a href='#top'><img src=".\assets\img\top.png" alt="top"
+      style="position: fixed; right:10px; bottom: 10px; height: 50px; width: 50px; z-index: 3;" /></a>
+  <div class="sun"><img src=".\assets\img\sun.png" alt="light"
+      style="position: fixed; right:10px; bottom: 70px; height: 50px; width: 50px;  z-index: 3"></div>
+  <div class="moon"><img src=".\assets\img\moon.png" alt="dark"
+      style="position: fixed; right:10px; bottom: 70px; height: 50px; width: 50px;  z-index: 3"></div>
+  <div id="home">
+    <img src=".\assets\img\photo.png" alt="photo" style="filter: drop-shadow(5px 5px 10px #555 ); z-index: -1;">
+    <div class="photo_content">
+      <h2>Hello guys, I am Poovarasan S</h2>
+      <p>Dedicated Information Science & Engineering student at UVCE, with a creative mindset and a passion for
+        innovative solutions, arduino projects, graphic designing and web development.</p>
+    </div>
+  </div>
+  <div id="abt_me">
+    <h2>About Me</h2>
+    <p> &nbsp;&nbsp; Here is my resume you guys can go through this </p>
+    <a href="https://drive.google.com/file/d/1sWg02M4HWw_Yv4LE5Jc-NxIH-yf997x7/view">
+      <img src=".\assets\img\download.png" alt="download" style="width: 50px;"/>
+    </a>
+  </div>
+  <div id="project">
+    <h2>Here are my project which I have done so far...</h2>
+    <div class="cards">
+     
+      <div class="card-tic">
+        <img src="./assets/img/tictactoe.png" alt="Web Sprint" class="card-img">
+        <div class="card-body">
+          <h4 class="card-title">Web Sprint</h4>
+          <p class="card-text">A Tic Tac Toe Game Using HTML,CSS,Javascript</p>
+          <a href="https://github.com/poovarasansivakumar2003/Web-App-Sprint"><input type="button" class="card-btn"
+              value="Repository link"></a>
+          <a href="https://poovarasansivakumar2003.github.io/Web-App-Sprint/"><input type="button" class="card-btn"
+              value="Web Link"></a>
+        </div>
+      </div>
+      <div class="card-code">
+        <img src="./assets/img/Codefury6.0.png" alt="Codefury 6.0" class="card-img">
+        <div class="card-body">
+          <h4 class="card-title">Codefury 6.0</h4>
+          <p class="card-text">A national level 24-hour hackathon conducted by IEEE UVCE</p>
+          <a href="https://github.com/poovarasansivakumar2003/Codefury-6.0"><input type="button" class="card-btn"
+              value="Repository link"></a>
+          <a href="https://poovarasansivakumar2003.github.io/Codefury-6.0/"><input type="button" class="card-btn"
+              value="Web Link"></a>
+        </div>
+      </div>
+      <div class="card-bit">
+        <img src="./assets/img/bitnbuild.jpeg" alt="BitNBuild" class="card-img">
+        <div class="card-body">
+          <h4 class="card-title">BitNBuild</h4>
+          <p class="card-text">A International level 24-hour hackathon conducted by IEEE UVCE</p>
+          <a href="https://github.com/poovarasansivakumar2003/BitNBuild-SPRint-team"><input type="button"
+              class="card-btn" value="Repository link"></a>
+          <a href="https://poovarasansivakumar2003.github.io/BitNBuild-SPRint-team/"><input type="button"
+              class="card-btn" value="Web Link"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="feedback">
+    <h2>Give me your valuable suggestions</h2>
+    <form>
+
+    </form>
+    <a href="upi://pay?pa=poovarasansivakumar2003@kbl&pn=POOVARASAN S&mc=0000&mode=02&purpose=00">&#8377</a>
+  </div>
+  <div id="contact_me">
+    <h2 style="margin-right: 20px; color:black;">Contact Me Through </h2>
+    <div class="symbols">
+      <a href="https://wa.me/qr/2YT2WUPUM6L6H1"><img src="./assets/img/whatsapp.png" class="icon" alt="whatsapp" /></a>
+      <a href="https://www.instagram.com/poovarasansivakumar2003/"><img src="./assets/img/instagram.png" class="icon"
+          alt="instagram" /></a>
+      <a href="https://m.facebook.com/poovarasansivakumar2003"><img src="./assets/img/facebook.png" class="icon"
+          alt="facebook" /></a>
+      <a href="https://x.com/Poovara79282181"><img src="./assets/img/twitter.png" class="icon" alt="twitter" /></a>
+      <a href="poovarasansivakumar2003@gmail.com"><img src="./assets/img/envelope.png" class="icon"
+          alt="envelope" /></a>
+      <a href="https://github.com/poovarasansivakumar2003"><img src="./assets/img/github.png" class="icon"
+          alt="github"></a>
+      <a href="https://www.youtube.com/@poovarasansivakumar2003"><img src="./assets/img/youtube.png" class="icon"
+          alt="youtube"></a>
+      <a href="https://t.me/poovarasansivakumar2003"><img src="./assets/img/telegram.png" class="icon"
+          alt="telegram"></a>
+      <a href="https://www.linkedin.com/in/poovarasan-s-a69128260/"><img src="./assets/img/linkedin.png" class="icon"
+          alt="linkedin"></a>
+    </div>
+  </div>
   <script src=".\assets\js\index.js"></script>
+  <script src=".\assets\js\bootstrap.min.js"></script>
 </body>
 
 </html>
