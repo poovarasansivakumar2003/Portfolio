@@ -170,10 +170,6 @@ nav {
     justify-content: space-around;
 }
 
-.card-tic,.card-code,.card-bit{
-    position: absolute;
-}
-
 .card-img{
     cursor: pointer;
     max-width:200px;
@@ -197,8 +193,8 @@ nav {
         opacity: 0.4;
     }
     .card-body{
-        display: block;
-        
+        display: block; 
+        transition: 200ms;
     }
 }
 .card-btn{
