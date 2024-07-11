@@ -1,32 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
-nav{
-    margin: 10px;
-    padding: 5px;
-    width: 80%;
+#loading {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: #f3b982;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    font-weight: 100;
+    font-size: 1.1em;
+    color: rgb(248, 134, 58);
+}
+
+span {
+    position: relative;
+    top: 0.63em;
+    display: inline-block;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: rotateX(-90deg);
+}
+
+
+.let1 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.2s;
+}
+
+.let2 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.3s;
+}
+
+.let3 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.4s;
+}
+
+.let4 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.5s;
+
+}
+
+.let5 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.6s;
+}
+
+.let6 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.7s;
+}
+
+.let7 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.8s;
+}
+
+@keyframes drop {
+    10% {
+        opacity: 0.5;
+    }
+
+    20% {
+        opacity: 1;
+        top: 3.78em;
+        transform: rotateX(-360deg);
+    }
+
+    80% {
+        opacity: 1;
+        top: 3.78em;
+        transform: rotateX(-360deg);
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+        top: 6.94em
+    }
+}
+
+nav {
+    width: 100%;
+    padding: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: beige;
 }
 
-
-.nav_logo{
-   display: flex;
-   gap: 20px;
-   align-items: center;
+.nav_logo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
-.nav_menu>a{
-    text-decoration: none;
+.nav_menu {
     color: black;
+    text-decoration: none;
+    position: relative;
     padding: 5px;
+    margin: 5px;
 }
 
-.nav_menu>a:hover{
+.nav_menu::before{
+    content: '';
+    background: linear-gradient(to right, rgb(252, 74, 26), rgb(247, 183, 51));
+    border-radius: 100px;
+    display: flex;
+    height: 4px;
+    width: 0;
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
     transition: 200ms;
-    color: blue;
 }
 
+.nav_menu:hover::before{
+    width: 100%;
+}
+
+.nav_menu:hover{
+    color: rgb(255, 115, 0); ;
+}
+
+.hamburger,.arrows-cross{
+    height: 33px;
+    width: 40px;
+    display: none;
+}
+
+
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    margin: 60px;
+    gap: 30px;
+}
+
+#abt_me, #project, #feedback {
+    margin: 60px;
+    padding: 10px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cards{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.card-tic,.card-code,.card-bit{
+    position: absolute;
+}
+
+.card-img{
+    cursor: pointer;
+    max-width:200px;
+    aspect-ratio: 2/1;
+    overflow-wrap: inherit;
+}
+
+.card-body{
+    display: none;
+    max-width: 200px;
+    font-size: small;
+    transition: 200ms;
+    position: relative;
+    bottom: 100px;
+}
+
+.card:hover{
+    .card-img{
+        transform: scale(1.2);
+        transition: 200ms;
+        opacity: 0.4;
+    }
+    .card-body{
+        display: block;
+        
+    }
+}
+.card-btn{
+    cursor: pointer;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    padding: 2px;
+}
+
+#contact_me {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    width: 100%;
+    background-color: beige;
+    min-height: 50px;
+}
+
+@media screen and (max-width: 1008px){
+    .hamburger{
+        display: block;
+    }
+
+    nav{
+        width: 100%;
+    }
+
+    .nav_menu_list{
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 55px;
+        padding-top: 30px;
+        right: 0px;
+        width: 250px;
+        height: 100vh;
+        align-items: center;
+        background-color: beige;
+        opacity: 0.7;
+        backdrop-filter: blur(10px);
+    }
+
+    #home{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    #contact_me{
+        flex-direction: column;
+       
+    }
+
+    .cards{
+        flex-direction: column;
+
+    }
+
+    .card>img{
+        width: 100%;
+        min-width: 150px;
+    }
+    
+}
