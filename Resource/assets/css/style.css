@@ -145,6 +145,14 @@ nav {
     display: none;
 }
 
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+}
 
 #home {
     display: flex;
