@@ -140,8 +140,7 @@ nav {
 }
 
 .hamburger,.arrows-cross{
-    height: 33px;
-    width: 40px;
+    cursor: pointer;
     display: none;
 }
 
