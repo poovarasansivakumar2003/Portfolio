@@ -62,12 +62,12 @@
   </div>
   <div id="abt_me" class="hidden">
     <h2>About Me</h2>
-    <p> &nbsp;&nbsp; Here is my resume you guys can go through this
-      <a href="https://drive.google.com/file/d/1sWg02M4HWw_Yv4LE5Jc-NxIH-yf997x7/view"><i class="fas fa-download"></i>
+    <p> &nbsp;&nbsp; Here is my resume you guys can go through this 
+      <a href="https://drive.google.com/file/d/1sWg02M4HWw_Yv4LE5Jc-NxIH-yf997x7/view" target="_blank"> <i class="fas fa-download"></i>
       </a>
     </p>
-    <p>Here are my notes upto date...<a
-        href="https://drive.google.com/drive/folders/1KWs7zgW-8H9L8pmN5t8xk8PTcmbn3UoV"><i
+    <p>Here are my notes upto date... <a
+        href="https://drive.google.com/drive/folders/1KWs7zgW-8H9L8pmN5t8xk8PTcmbn3UoV" target="_blank"><i
           class="fa-regular fa-note-sticky"></i></a></p>
   </div>
   <div id="project" class="hidden">
@@ -78,9 +78,9 @@
         <div class="card-body">
           <h4 class="card-title">Web Sprint</h4>
           <p class="card-text">A Tic Tac Toe Game Using HTML,CSS,Javascript</p>
-          <a href="https://github.com/poovarasansivakumar2003/Web-App-Sprint"><input type="button" class="card-btn"
+          <a href="https://github.com/poovarasansivakumar2003/Web-App-Sprint" target="_blank"><input type="button" class="card-btn"
               value="Repository link"></a>
-          <a href="https://poovarasansivakumar2003.github.io/Web-App-Sprint/"><input type="button" class="card-btn"
+          <a href="https://poovarasansivakumar2003.github.io/Web-App-Sprint/" target="_blank"><input type="button" class="card-btn"
               value="Web Link"></a>
         </div>
       </div>
@@ -89,9 +89,9 @@
         <div class="card-body">
           <h4 class="card-title">Codefury 6.0</h4>
           <p class="card-text">A national level 24-hour hackathon conducted by IEEE UVCE</p>
-          <a href="https://github.com/poovarasansivakumar2003/Codefury-6.0"><input type="button" class="card-btn"
+          <a href="https://github.com/poovarasansivakumar2003/Codefury-6.0" target="_blank"><input type="button" class="card-btn"
               value="Repository link"></a>
-          <a href="https://poovarasansivakumar2003.github.io/Codefury-6.0/"><input type="button" class="card-btn"
+          <a href="https://poovarasansivakumar2003.github.io/Codefury-6.0/" target="_blank"><input type="button" class="card-btn"
               value="Web Link"></a>
         </div>
       </div>
@@ -100,9 +100,9 @@
         <div class="card-body">
           <h4 class="card-title">BitNBuild</h4>
           <p class="card-text">A International level 24-hour hackathon conducted by IEEE UVCE</p>
-          <a href="https://github.com/poovarasansivakumar2003/BitNBuild-SPRint-team"><input type="button"
+          <a href="https://github.com/poovarasansivakumar2003/BitNBuild-SPRint-team" target="_blank"><input type="button"
               class="card-btn" value="Repository link"></a>
-          <a href="https://poovarasansivakumar2003.github.io/BitNBuild-SPRint-team/"><input type="button"
+          <a href="https://poovarasansivakumar2003.github.io/BitNBuild-SPRint-team/" target="_blank"><input type="button"
               class="card-btn" value="Web Link"></a>
         </div>
       </div>
@@ -110,31 +110,75 @@
   </div>
   <div id="feedback" class="hidden">
     <h2>Give me your valuable suggestions</h2>
-    <form>
+    <div class="form-box"> 
+      <div class="textup"> 
+          <i class="fa fa-solid fa-clock"></i> 
+          It only takes two minutes!! 
+      </div> 
+      <form> 
+          <label for="uname"> 
+              <i class="fa fa-solid fa-user"></i> 
+              Name 
+          </label> 
+          <input type="text" id="uname" 
+                 name="uname" required> 
 
-    </form>
+          <label for="email"> 
+              <i class="fa fa-solid fa-envelope"></i> 
+              Email Address 
+          </label> 
+          <input type="email" id="email" 
+                 name="email" required> 
+
+          <label for="phone"> 
+              <i class="fa-solid fa-phone"></i> 
+              Phone No 
+          </label> 
+          <input type="tel" id="phone" 
+                 name="phone" required> 
+
+          <label> 
+              <i class="fa-solid fa-face-smile"></i> 
+              Do you satisfy with our service? 
+          </label> 
+          <div class="radio-group"> 
+              <input type="radio" id="yes" 
+                     name="satisfy" value="yes" checked> 
+              <label for="yes">Yes</label> 
+
+              <input type="radio" id="no" 
+                     name="satisfy" value="no"> 
+              <label for="no">No</label> 
+          </div> 
+
+          <label for="msg"> 
+              <i class="fa-solid fa-comments" 
+                 style="margin-right: 3px;"></i> 
+              Write your Suggestions: 
+          </label> 
+          <textarea id="msg" name="msg" 
+                    rows="4" cols="10" required> 
+          </textarea> 
+          <button type="submit"> 
+              Submit 
+          </button> 
+      </form> 
+  </div> 
     <p>Buy me coffee <i class="fa-solid fa-mug-saucer"></i></p>
     <img src="./assets/img/upiscanner.jpg" alt="upi" />
   </div>
   <div id="contact_me" class="hidden">
     <h2 style="margin-right: 20px; color:black;">Contact Me Through </h2>
     <div class="symbols">
-      <a href="https://wa.me/qr/2YT2WUPUM6L6H1"><img src="./assets/img/whatsapp.png" class="icon" alt="whatsapp" /></a>
-      <a href="https://www.instagram.com/poovarasansivakumar2003/"><img src="./assets/img/instagram.png" class="icon"
-          alt="instagram" /></a>
-      <a href="https://m.facebook.com/poovarasansivakumar2003"><img src="./assets/img/facebook.png" class="icon"
-          alt="facebook" /></a>
-      <a href="https://x.com/Poovara79282181"><img src="./assets/img/twitter.png" class="icon" alt="twitter" /></a>
-      <a href="poovarasansivakumar2003@gmail.com"><img src="./assets/img/envelope.png" class="icon"
-          alt="envelope" /></a>
-      <a href="https://github.com/poovarasansivakumar2003"><img src="./assets/img/github.png" class="icon"
-          alt="github"></a>
-      <a href="https://www.youtube.com/@poovarasansivakumar2003"><img src="./assets/img/youtube.png" class="icon"
-          alt="youtube"></a>
-      <a href="https://t.me/poovarasansivakumar2003"><img src="./assets/img/telegram.png" class="icon"
-          alt="telegram"></a>
-      <a href="https://www.linkedin.com/in/poovarasan-s-a69128260/"><img src="./assets/img/linkedin.png" class="icon"
-          alt="linkedin"></a>
+      <a href="https://wa.me/qr/2YT2WUPUM6L6H1" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/poovarasansivakumar2003/ target="_blank""><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://m.facebook.com/poovarasansivakumar2003"target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://x.com/Poovara79282181" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="poovarasansivakumar2003@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+      <a href="https://github.com/poovarasansivakumar2003" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.youtube.com/@poovarasansivakumar2003" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://t.me/poovarasansivakumar2003" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://www.linkedin.com/in/poovarasan-s-a69128260/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
     </div>
   </div>
   <script src=".\assets\js\index.js"></script>
