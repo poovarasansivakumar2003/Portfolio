@@ -164,9 +164,12 @@ nav {
     flex-wrap: wrap;
 }
 
-#home{
+#home {
     flex-wrap: nowrap;
 }
+
+
+
 
 .cards {
     display: flex;
@@ -192,7 +195,7 @@ nav {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to top,rgb(247, 183, 51,0.7), beige) ;
+    background: linear-gradient(to top, rgb(247, 183, 51, 0.7), beige);
     font-size: small;
     color: black;
     padding: 23px;
@@ -213,8 +216,8 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap:30px;
-    padding:30px;
+    gap: 30px;
+    padding: 30px;
     width: 100%;
     background-color: beige;
     min-height: 50px;
@@ -224,9 +227,10 @@ nav {
 .symbols>a {
     color: black;
     font-size: 30px;
+    padding: 5px;
 }
 
-.copyright>p>a{
+.copyright>p>a {
     color: black;
     text-decoration: none;
 }
@@ -255,7 +259,9 @@ nav {
         backdrop-filter: blur(10px);
     }
 
-    #home,#abt_me,#project,
+    #home,
+    #abt_me,
+    #project,
     #feedback {
         flex-wrap: nowrap;
         flex-direction: column;
@@ -263,7 +269,7 @@ nav {
     }
 
 
-    
+
 
     .cards {
         flex-direction: column;
