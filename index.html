@@ -35,15 +35,17 @@
       <h2 style="cursor: default; color:black;">Poovarasan's Portfolio</h2>
     </div>
     <div class="nav_menu_list">
+      <div class="arrows-cross"><i class="fa-solid fa-x"></i></div>
       <a href="#home" class="nav_menu">Home</a>
       <a href="#abt_me" class="nav_menu">About Me</a>
       <a href="#project" class="nav_menu">Projects</a>
       <a href="#feedback" class="nav_menu">Feedback</a>
       <a href="#contact_me" class="nav_menu">Contact Me</a>
       <a href="login.html" class="nav_menu">Login</a>
+
     </div>
     <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
-    <div class="arrows-cross"><i class="fa-solid fa-x"></i></div>
+
   </nav>
 
   <a href='#top'><img src=".\assets\img\top.png" alt="top"
@@ -69,9 +71,8 @@
         </button>
       </a>
     </p>
-    <p>Here are my notes upto date... 
-      <a href="https://drive.google.com/drive/folders/1KWs7zgW-8H9L8pmN5t8xk8PTcmbn3UoV"
-        target="_blank">
+    <p>Here are my notes upto date...
+      <a href="https://drive.google.com/drive/folders/1KWs7zgW-8H9L8pmN5t8xk8PTcmbn3UoV" target="_blank">
         <button>
           Notes
         </button>
@@ -86,10 +87,10 @@
         <div class="card-body">
           <h4 class="card-title">Web Sprint</h4>
           <p class="card-text">A Tic Tac Toe Game Using HTML,CSS,Javascript</p>
-          <a href="https://github.com/poovarasansivakumar2003/Web-App-Sprint" target="_blank"><input type="button"
-              class="card-btn" value="Repository link"></a>
-          <a href="https://poovarasansivakumar2003.github.io/Web-App-Sprint/" target="_blank"><input type="button"
-              class="card-btn" value="Web Link"></a>
+          <a href="https://github.com/poovarasansivakumar2003/Web-App-Sprint" target="_blank"><button
+              style="font-size: 10px; font-weight: 500; padding: 5px; width: fit-content;">Repository link</button></a>
+          <a href="https://poovarasansivakumar2003.github.io/Web-App-Sprint/" target="_blank"><button
+              style="font-size: 10px; font-weight: 500; padding: 5px; width: fit-content;">Web Link</button></a>
         </div>
       </div>
       <div class="card">
@@ -97,10 +98,10 @@
         <div class="card-body">
           <h4 class="card-title">Codefury 6.0</h4>
           <p class="card-text">A national level 24-hour hackathon conducted by IEEE UVCE</p>
-          <a href="https://github.com/poovarasansivakumar2003/Codefury-6.0" target="_blank"><input type="button"
-              class="card-btn" value="Repository link"></a>
-          <a href="https://poovarasansivakumar2003.github.io/Codefury-6.0/" target="_blank"><input type="button"
-              class="card-btn" value="Web Link"></a>
+          <a href="https://github.com/poovarasansivakumar2003/Codefury-6.0" target="_blank"><button
+              style="font-size: 10px; font-weight: 500; padding: 5px; width: fit-content;">Repository link</button></a>
+          <a href="https://poovarasansivakumar2003.github.io/Codefury-6.0/" target="_blank"><button
+              style="font-size: 10px; font-weight: 500; padding: 5px; width: fit-content;">Web Link</button></a>
         </div>
       </div>
       <div class="card">
@@ -108,16 +109,23 @@
         <div class="card-body">
           <h4 class="card-title">BitNBuild</h4>
           <p class="card-text">A International level 24-hour hackathon conducted by IEEE UVCE</p>
-          <a href="https://github.com/poovarasansivakumar2003/BitNBuild-SPRint-team" target="_blank"><input
-              type="button" class="card-btn" value="Repository link"></a>
-          <a href="https://poovarasansivakumar2003.github.io/BitNBuild-SPRint-team/" target="_blank"><input
-              type="button" class="card-btn" value="Web Link"></a>
+          <a href="https://github.com/poovarasansivakumar2003/BitNBuild-SPRint-team" target="_blank"><button
+              style="font-size: 10px; font-weight: 500; padding: 5px; width: fit-content;">Repository link</button></a>
+          <a href="https://poovarasansivakumar2003.github.io/BitNBuild-SPRint-team/" target="_blank"><button
+              style="font-size: 10px; font-weight: 500; padding: 5px; width: fit-content;">Web Link</button></a>
         </div>
       </div>
     </div>
   </div>
   <div id="feedback" class="hidden">
     <h2>Give me your valuable suggestions</h2>
+    <form action="#" method="get">
+      <label for="Feedback">Feedback:</label>
+      <textarea id="Feedback" name="Feedback" required></textarea>
+      <label for="Rating">Rating:</label>
+      <select id="Rating" name="Rating" required>
+      <input type="submit" value="Submit">
+    </form>
     <p>Buy me coffee <i class="fa-solid fa-mug-saucer"></i></p>
     <img src="./assets/img/upiscanner.jpg" alt="upi" width="200px" height="200px" />
   </div>

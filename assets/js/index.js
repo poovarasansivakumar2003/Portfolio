@@ -36,4 +36,3 @@ sun.onclick=function() {
     sun.style.display="none";
     moon.style.display="block";
 }
-

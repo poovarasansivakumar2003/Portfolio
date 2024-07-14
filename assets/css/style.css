@@ -102,6 +102,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     background-color: beige;
+
 }
 
 .nav_logo {
@@ -139,7 +140,15 @@ nav {
 .hamburger,
 .arrows-cross {
     cursor: pointer;
+    color: black;
+    font-size: larger;
     display: none;
+}
+
+.arrows-cross {
+    position: fixed;
+    top: 15px;
+    right: 30px;
 }
 
 .hidden {
@@ -168,7 +177,23 @@ nav {
     flex-wrap: nowrap;
 }
 
+button {
+    cursor: pointer;
+    background-color: beige;
+    color: black;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 4px;
+    border: 2px solid rgb(247, 183, 51) ;
+    transition-duration: 0.4s;
+    font-size: 16px;
+}
 
+button:hover {
+    background-color: rgb(247, 183, 51) ;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+}
 
 
 .cards {
@@ -181,7 +206,7 @@ nav {
 
 .card {
     position: relative;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .card-img {
@@ -206,10 +231,6 @@ nav {
 .card:hover .card-body {
     transform: translateY(0);
     height: -webkit-fill-available;
-}
-
-.card-btn {
-    cursor: pointer;
 }
 
 #contact_me {
@@ -244,19 +265,21 @@ nav {
         width: 100%;
     }
 
+
     .nav_menu_list {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 55px;
-        padding-top: 30px;
-        right: 0px;
+        top: 0;
+        right: 0;
+        padding: 20px;
         width: 250px;
         height: 100%;
         align-items: center;
         background-color: beige;
         opacity: 0.7;
         backdrop-filter: blur(10px);
+        z-index: 3;
     }
 
     #home,
