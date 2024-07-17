@@ -31,31 +31,26 @@
   </div>
   <div id="top"></div>
   <nav>
-    <div class="nav_logo"><img src=".\assets\img\favicon.png" alt="logo">
+    <div class="nav_logo">
+      <img src=".\assets\img\favicon.png" alt="logo">
       <h2 style="cursor: default; color:black;">Poovarasan's Portfolio</h2>
+      <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+      <div class="arrows-cross"><i class="fa-solid fa-x"></i></div>
     </div>
     <div class="nav_menu_list">
-      <div class="arrows-cross"><i class="fa-solid fa-x"></i></div>
       <a href="#home" class="nav_menu">Home</a>
       <a href="#abt_me" class="nav_menu">About Me</a>
       <a href="#project" class="nav_menu">Projects</a>
       <a href="#feedback" class="nav_menu">Feedback</a>
       <a href="#contact_me" class="nav_menu">Contact Me</a>
       <a href="login.html" class="nav_menu">Login</a>
-
     </div>
-    <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
-
   </nav>
-
-  <a href='#top'><img src=".\assets\img\top.png" alt="top"
-      style="position: fixed; right:10px; bottom: 10px; height: 50px; width: 50px; z-index: 3;" /></a>
-  <div class="sun"><img src=".\assets\img\sun.png" alt="light"
-      style="position: fixed; right:10px; bottom: 70px; height: 50px; width: 50px;  z-index: 3;cursor: pointer;"></div>
-  <div class="moon"><img src=".\assets\img\moon.png" alt="dark"
-      style="position: fixed; right:10px; bottom: 70px; height: 50px; width: 50px;  z-index: 3; cursor: pointer;"></div>
+  <a href='#top'><img src=".\assets\img\top.png" alt="top" class="top" style="bottom: 10px;" /></a>
+  <img src=".\assets\img\sun.png" class="sun" alt="light" style="display: none; bottom: 70px;" />
+  <img src=".\assets\img\moon.png" div class="moon" alt="dark" style="bottom: 70px;" />
   <div id="home" class="hidden">
-    <img src=".\assets\img\photo.png" alt="photo" style="filter: drop-shadow(5px 5px 10px #555 ); z-index: -1;">
+    <img src=".\assets\img\photo.png" alt="photo" style="filter: drop-shadow(5px 5px 10px #555 );">
     <div class="intro">
       <h2>Hello guys, I am Poovarasan S</h2>
       <p>Dedicated Information Science & Engineering student at UVCE, with a creative mindset and a passion for
@@ -154,6 +149,15 @@
       <a href="https://www.linkedin.com/in/poovarasan-s-a69128260/" target="_blank"><i
           class="fa-brands fa-linkedin"></i></a>
     </div>
+    <div class="count">
+      <p>Date and Time
+      <div class="date"></div></p>
+      <p>No. of Viewer
+      <div class="view"></div></p>
+      <p>No. of Login
+      <div class="login"></div></p>
+    </div>
+
     <div class="copyright">
       <p><i class="fa-solid fa-copyright"></i> 2024 Poovarasan S, All rights reserved |
         <a href="https://github.com/poovarasansivakumar2003/Portfolio/blob/master/LICENSE.md" target="_blank"
@@ -162,7 +166,6 @@
     </div>
   </div>
   <script src=".\assets\js\index.js"></script>
-  <script src=".\assets\js\bootstrap.min.js"></script>
 </body>
 
 </html>

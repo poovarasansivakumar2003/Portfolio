@@ -7,6 +7,8 @@
     <title>Register & Login</title>
     <link rel="icon" href=".\assets\img\favicon.png" type="favicon">
     <link rel="stylesheet" href=".\assets\css\bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a92e2be0b6.js" crossorigin="anonymous"></script>
+    <script src=".\assets\js\jquery.min.js"></script>
     <style>
         body {
             display: flex;
@@ -14,13 +16,131 @@
             padding: 100px;
         }
 
+        #loading {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            background: #f3b982;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            font-weight: 100;
+            font-size: 1.1em;
+            color: rgb(248, 134, 58);
+        }
+
+        span {
+            position: relative;
+            top: 0.63em;
+            display: inline-block;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: rotateX(-90deg);
+        }
+
+        .let1 {
+            animation: drop 1.2s ease-in-out infinite;
+            animation-delay: 1.2s;
+        }
+
+        .let2 {
+            animation: drop 1.2s ease-in-out infinite;
+            animation-delay: 1.3s;
+        }
+
+        .let3 {
+            animation: drop 1.2s ease-in-out infinite;
+            animation-delay: 1.4s;
+        }
+
+        .let4 {
+            animation: drop 1.2s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+
+        .let5 {
+            animation: drop 1.2s ease-in-out infinite;
+            animation-delay: 1.6s;
+        }
+
+        .let6 {
+            animation: drop 1.2s ease-in-out infinite;
+            animation-delay: 1.7s;
+        }
+
+        .let7 {
+            animation: drop 1.2s ease-in-out infinite;
+            animation-delay: 1.8s;
+        }
+
+        @keyframes drop {
+            10% {
+                opacity: 0.5;
+            }
+
+            20% {
+                opacity: 1;
+                top: 3.78em;
+                transform: rotateX(-360deg);
+            }
+
+            80% {
+                opacity: 1;
+                top: 3.78em;
+                transform: rotateX(-360deg);
+            }
+
+            90% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 0;
+                top: 6.94em;
+            }
+        }
+
+        .sun,
+        .moon {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            height: 50px;
+            width: 50px;
+            z-index: 3;
+            cursor: pointer;
+        }
+
         h1 {
             margin: 20px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .icons a {
+            font-size: xx-large;
+            padding: 10px;
         }
     </style>
 </head>
 
 <body>
+    <div id="loading">
+        <h2>
+            <span class="let1">l</span>
+            <span class="let2">o</span>
+            <span class="let3">a</span>
+            <span class="let4">d</span>
+            <span class="let5">i</span>
+            <span class="let6">n</span>
+            <span class="let7">g</span>
+        </h2>
+    </div>
+    <img src=".\assets\img\sun.png" class="sun" alt="light" style="display: none;">
+    <img src=".\assets\img\moon.png" class="moon" alt="dark">
     <div id="signup" style="display:none;">
         <h1>Register</h1>
         <form>
@@ -28,57 +148,75 @@
             <input type="text" name="fname" id="fName" placeholder="First Name" required><br>
             <label for="lName">Last Name</label><br>
             <input type="text" name="lName" id="lName" placeholder="Last Name" required><br>
-            <label for="email">Email</label><br>
-            <input type="email" name="email" id="email" placeholder="Email" required><br>
-            <label for="password">Password</label><br>
-            <input type="password" name="password" id="password" placeholder="Password" required>
+            <label for="emailSignUp">Email</label><br>
+            <input type="email" name="email" id="emailSignUp" placeholder="Email" required><br>
+            <label for="passwordSignUp">Password</label><br>
+            <input type="password" name="password" id="passwordSignUp" placeholder="Password" required>
             <br><br>
-            <input type="submit" class="btn" value="Sign Up" name="signUp">
+            <input type="submit" class="btn btn-primary" value="Sign Up" name="signUp">
         </form>
-        ----------or--------
+        --------------or--------------
+        <p>Sign Up Through</p>
         <div class="icons">
-            <a href="#"><i>Google</i></a>
-            <a href="#"><i>Facebook</i></a>
+            <a href="#"><i class="fa-brands fa-google"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
         </div>
-        <p>Already Have Account ?</p>
-        <button id="signInButton">Sign In</button>
-        <a href="index.html"><input type="button" class='btn' value="Home page"></a>
+        --------------or--------------
+        <p>Already Have Account?</p>
+        <button id="signInButton" class="btn btn-primary">Sign In</button>
+        <a href="index.html"><input type="button" class="btn btn-primary" value="Home page"></a>
     </div>
 
     <div id="signIn">
         <h1>Sign In</h1>
         <form>
-            <label for="email">Email</label><br>
-            <input type="email" name="email" id="email" placeholder="Email" required><br>
-            <label for="password">Password</label><br>
-            <input type="password" name="password" id="password" placeholder="Password" required><br>
+            <label for="emailSignIn">Email</label><br>
+            <input type="email" name="email" id="emailSignIn" placeholder="Email" required><br>
+            <label for="passwordSignIn">Password</label><br>
+            <input type="password" name="password" id="passwordSignIn" placeholder="Password" required><br>
             <a href="#">Recover Password</a><br><br>
-            <input type="submit" class="btn" value="Sign In" name="signIn">
+            <input type="submit" class="btn btn-primary" value="Sign In" name="signIn">
         </form>
-        ----------or--------
+        --------------or--------------
+        <p>Sign In Through</p>
         <div class="icons">
-            <a href="#"><i>Google</i></a>
-            <a href="#"><i>Facebook</i></a>
+            <a href="#"><i class="fa-brands fa-google"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
         </div>
+        --------------or--------------
         <p>Don't have account yet?</p>
-        <button id="signUpButton">Sign Up</button>
-        <a href="index.html"><input type="button" class='btn' value="Home page"></a>
+        <button id="signUpButton" class="btn btn-primary">Sign Up</button>
+        <a href="index.html"><input type="button" class="btn btn-primary" value="Home page"></a>
     </div>
     <script>
-        const signUpButton = document.getElementById('signUpButton');
-        const signInButton = document.getElementById('signInButton');
-        const signInForm = document.getElementById('signIn');
-        const signUpForm = document.getElementById('signup');
-        signUpButton.addEventListener('click', function () {
-            signInForm.style.display = "none";
-            signUpForm.style.display = "block";
-        })
-        signInButton.addEventListener('click', function () {
-            signInForm.style.display = "block";
-            signUpForm.style.display = "none";
-        })
+        $(document).ready(function () {
+            $("#loading").hide();
+            $("#signUpButton").click(function () {
+                $("#signup").slideDown(1000);
+                $("#signIn").toggle();
+            });
+            $("#signInButton").click(function () {
+                $("#signup").toggle();
+                $("#signIn").slideDown(1000);
+            });
+            $(".moon").click(function () {
+                $("body").css({
+                    "background-color": "#191a1a",
+                    "color": "white"
+                });
+                $(".sun").show(1000);
+                $(".moon").hide(1000);
+            });
+            $(".sun").click(function () {
+                $("body").css({
+                    "background-color": "white",
+                    "color": "black"
+                });
+                $(".moon").show(1000);
+                $(".sun").hide(1000);
+            });
+        });
     </script>
-    <script src=".\assets\js\bootstrap.min.js"></script>
 </body>
 
 </html>

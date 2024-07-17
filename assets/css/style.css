@@ -102,13 +102,23 @@ nav {
     justify-content: space-around;
     align-items: center;
     background-color: beige;
-
 }
 
 .nav_logo {
     display: flex;
     gap: 20px;
     align-items: center;
+}
+
+.sun,
+.moon,
+.top {
+    position: fixed;
+    right: 10px;
+    height: 50px;
+    width: 50px;
+    z-index: 3;
+    cursor: pointer;
 }
 
 .nav_menu {
@@ -139,16 +149,10 @@ nav {
 
 .hamburger,
 .arrows-cross {
+    display: none;
     cursor: pointer;
     color: black;
     font-size: larger;
-    display: none;
-}
-
-.arrows-cross {
-    position: fixed;
-    top: 15px;
-    right: 30px;
 }
 
 .hidden {
@@ -184,17 +188,16 @@ button {
     border: none;
     padding: 5px 20px;
     border-radius: 4px;
-    border: 2px solid rgb(247, 183, 51) ;
+    border: 2px solid rgb(247, 183, 51);
     transition-duration: 0.4s;
     font-size: 16px;
 }
 
 button:hover {
-    background-color: rgb(247, 183, 51) ;
+    background-color: rgb(247, 183, 51);
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     color: white;
 }
-
 
 .cards {
     display: flex;
@@ -263,23 +266,21 @@ button:hover {
 
     nav {
         width: 100%;
+        flex-direction: column;
     }
 
+    .nav_logo {
+        justify-content: space-around;
+        width: 100%;
+    }
 
     .nav_menu_list {
         display: none;
         flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
         padding: 20px;
-        width: 250px;
-        height: 100%;
+        width: 100%;
         align-items: center;
         background-color: beige;
-        opacity: 0.7;
-        backdrop-filter: blur(10px);
-        z-index: 3;
     }
 
     #home,
@@ -290,9 +291,6 @@ button:hover {
         flex-direction: column;
         gap: 30px;
     }
-
-
-
 
     .cards {
         flex-direction: column;
