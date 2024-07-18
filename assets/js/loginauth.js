@@ -27,6 +27,7 @@ const firebaseConfig = {
         .then((docSnap)=>{
             if(docSnap.exists()){
                 const userData=docSnap.data();
+                document.querySelector('.afterlogin').style.display="block";
                 document.getElementById('loggedUserFName').innerText=userData.firstName;
                 document.getElementById('loggedUserEmail').innerText=userData.email;
                 document.getElementById('loggedUserLName').innerText=userData.lastName;

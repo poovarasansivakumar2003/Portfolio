@@ -146,6 +146,9 @@ nav {
     width: 100%;
 }
 
+.afterlogin{
+    display: none;
+}
 
 .hamburger,
 .arrows-cross {
