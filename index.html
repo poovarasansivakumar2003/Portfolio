@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <script defer src="./assets/js/scroll.js"></script>
   <script src="https://kit.fontawesome.com/a92e2be0b6.js" crossorigin="anonymous"></script>
+  <script type="module" src="./assets/js/loginauth.js"></script>
 </head>
 
 
@@ -44,11 +45,14 @@
       <a href="#feedback" class="nav_menu">Feedback</a>
       <a href="#contact_me" class="nav_menu">Contact Me</a>
       <a href="login.html" class="nav_menu">Login</a>
+      <button id="logout">Logout</button>
     </div>
   </nav>
   <a href='#top'><img src=".\assets\img\top.png" alt="top" class="top" style="bottom: 10px;" /></a>
   <img src=".\assets\img\sun.png" class="sun" alt="light" style="display: none; bottom: 70px;" />
   <img src=".\assets\img\moon.png" div class="moon" alt="dark" style="bottom: 70px;" />
+  <div><p>Hello <span id="loggedUserFName"></span> <span id="loggedUserLName"></span></p></div>
+   <button id="logout">Logout</button>
   <div id="home" class="hidden">
     <img src=".\assets\img\photo.png" alt="photo" style="filter: drop-shadow(5px 5px 10px #555 );">
     <div class="intro">
@@ -150,14 +154,10 @@
           class="fa-brands fa-linkedin"></i></a>
     </div>
     <div class="count">
-      <p>Date and Time
-      <div class="date"></div></p>
-      <p>No. of Viewer
-      <div class="view"></div></p>
-      <p>No. of Login
-      <div class="login"></div></p>
+      <p>Date and Time<div class="date"></div></p>
+      <p>No. of Viewer<div class="view"></div></p>
+      <p>No. of Login<div class="login"></div></p>
     </div>
-
     <div class="copyright">
       <p><i class="fa-solid fa-copyright"></i> 2024 Poovarasan S, All rights reserved |
         <a href="https://github.com/poovarasansivakumar2003/Portfolio/blob/master/LICENSE.md" target="_blank"

@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register & Login</title>
-    <link rel="icon" href=".\assets\img\favicon.png" type="favicon">
-    <link rel="stylesheet" href=".\assets\css\bootstrap.min.css">
+    <link rel="icon" href="./assets/img/favicon.png" type="favicon">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a92e2be0b6.js" crossorigin="anonymous"></script>
-    <script src=".\assets\js\jquery.min.js"></script>
+    <script type="module" src="./assets/js/firebaseauth.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
     <style>
         body {
             display: flex;
@@ -114,10 +115,16 @@
 
         h1 {
             margin: 20px;
+            text-align: center
         }
 
         p {
             text-align: center;
+        }
+
+        .icons{
+            display:flex; 
+            justify-content: center;
         }
 
         .icons a {
@@ -139,29 +146,29 @@
             <span class="let7">g</span>
         </h2>
     </div>
-    <img src=".\assets\img\sun.png" class="sun" alt="light" style="display: none;">
-    <img src=".\assets\img\moon.png" class="moon" alt="dark">
+    <img src="./assets/img/sun.png" class="sun" alt="light" style="display: none;">
+    <img src="./assets/img/moon.png" class="moon" alt="dark">
     <div id="signup" style="display:none;">
         <h1>Register</h1>
-        <form>
-            <label for="fname">First Name</label><br>
-            <input type="text" name="fname" id="fName" placeholder="First Name" required><br>
-            <label for="lName">Last Name</label><br>
-            <input type="text" name="lName" id="lName" placeholder="Last Name" required><br>
-            <label for="emailSignUp">Email</label><br>
-            <input type="email" name="email" id="emailSignUp" placeholder="Email" required><br>
-            <label for="passwordSignUp">Password</label><br>
-            <input type="password" name="password" id="passwordSignUp" placeholder="Password" required>
-            <br><br>
-            <input type="submit" class="btn btn-primary" value="Sign Up" name="signUp">
+        <form method="post" action="" id="signUpForm">
+            <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+            <p><i class="fas fa-user"></i> <label for="fname">First Name</label></p>
+            <p><input type="text" name="fname" id="fName" placeholder="First Name" required></p>
+            <p><i class="fas fa-user"></i> <label for="lName">Last Name</label></p>
+            <p><input type="text" name="lName" id="lName" placeholder="Last Name" required></p>
+            <p><i class="fas fa-envelope"></i> <label for="rEmail"> Email</label></p>
+            <p><input type="email" name="email" id="rEmail" placeholder="Email" required></p>
+            <p><i class="fas fa-lock"></i> <label for="rPassword"> Password</label></p>
+            <p><input type="password" name="password" id="rPassword" placeholder="Password" required></p>
+            <p><input type="submit" class="btn btn-primary" value="Sign Up" name="signUp" id="submitSignUp"></p>
         </form>
-        --------------or--------------
+        <p>--------------or--------------</p>
         <p>Sign Up Through</p>
         <div class="icons">
             <a href="#"><i class="fa-brands fa-google"></i></a>
             <a href="#"><i class="fa-brands fa-facebook"></i></a>
         </div>
-        --------------or--------------
+        <p>--------------or--------------</p>
         <p>Already Have Account?</p>
         <button id="signInButton" class="btn btn-primary">Sign In</button>
         <a href="index.html"><input type="button" class="btn btn-primary" value="Home page"></a>
@@ -169,21 +176,22 @@
 
     <div id="signIn">
         <h1>Sign In</h1>
-        <form>
-            <label for="emailSignIn">Email</label><br>
-            <input type="email" name="email" id="emailSignIn" placeholder="Email" required><br>
-            <label for="passwordSignIn">Password</label><br>
-            <input type="password" name="password" id="passwordSignIn" placeholder="Password" required><br>
+        <form method="post" action="" id="signInForm">
+            <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+            <p><i class="fas fa-envelope"></i> <label for="email">Email</label></p>
+            <p><input type="email" name="email" id="email" placeholder="Email" required></p>
+            <p><i class="fas fa-lock"></i> <label for="password">Password</label></p>
+            <p><input type="password" name="password" id="password" placeholder="Password" required></p>
             <a href="#">Recover Password</a><br><br>
-            <input type="submit" class="btn btn-primary" value="Sign In" name="signIn">
+            <p><input type="submit" class="btn btn-primary" id="submitSignIn" value="Sign In" name="signIn"></p>
         </form>
-        --------------or--------------
+        <p>--------------or--------------</p>
         <p>Sign In Through</p>
         <div class="icons">
             <a href="#"><i class="fa-brands fa-google"></i></a>
             <a href="#"><i class="fa-brands fa-facebook"></i></a>
         </div>
-        --------------or--------------
+        <p>--------------or--------------</p>
         <p>Don't have account yet?</p>
         <button id="signUpButton" class="btn btn-primary">Sign Up</button>
         <a href="index.html"><input type="button" class="btn btn-primary" value="Home page"></a>
@@ -214,6 +222,9 @@
                 });
                 $(".moon").show(1000);
                 $(".sun").hide(1000);
+            });
+            $(".icons").click(function(){
+                alert("Coming Soon")
             });
         });
     </script>
