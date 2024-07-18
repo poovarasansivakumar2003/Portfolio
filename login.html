@@ -150,17 +150,18 @@
     <img src="./assets/img/moon.png" class="moon" alt="dark">
     <div id="signup" style="display:none;">
         <h1>Register</h1>
-        <form method="" action="" id="signUpForm">
-            <p><i class="fas fa-user"></i> <label for="fname">First Name</label></p>
-            <p><input type="text" name="fname" id="fName" placeholder="First Name" required></p>
-            <p><i class="fas fa-user"></i> <label for="lName">Last Name</label></p>
-            <p><input type="text" name="lName" id="lName" placeholder="Last Name" required></p>
-            <p><i class="fas fa-envelope"></i> <label for="rEmail"> Email</label></p>
-            <p><input type="email" name="email" id="rEmail" placeholder="Email" required></p>
-            <p><i class="fas fa-lock"></i> <label for="rPassword"> Password</label></p>
-            <p><input type="password" name="password" id="rPassword" placeholder="Password" required></p>
-            <p><input type="submit" class="btn btn-primary" value="Sign Up" name="signUp" id="submitSignUp"></p>
+        <form id="signUpForm">
+            <label for="fname">First Name</label><br>
+            <input type="text" name="fname" id="fName" placeholder="First Name" required><br>
+            <label for="lName">Last Name</label><br>
+            <input type="text" name="lName" id="lName" placeholder="Last Name" required><br>
+            <label for="emailSignUp">Email</label><br>
+            <input type="email" name="email" id="emailSignUp" placeholder="Email" required><br>
+            <label for="passwordSignUp">Password</label><br>
+            <input type="password" name="password" id="passwordSignUp" placeholder="Password" required><br><br>
+            <input type="submit" class="btn btn-primary" value="Sign Up" name="signUp" id="signUp-btn">
         </form>
+        
         <p>--------------or--------------</p>
         <p>Sign Up Through</p>
         <div class="icons">
@@ -175,13 +176,12 @@
 
     <div id="signIn">
         <h1>Sign In</h1>
-        <form method="" action="" id="signInForm">
-            <p><i class="fas fa-envelope"></i> <label for="email">Email</label></p>
-            <p><input type="email" name="email" id="email" placeholder="Email" required></p>
-            <p><i class="fas fa-lock"></i> <label for="password">Password</label></p>
-            <p><input type="password" name="password" id="password" placeholder="Password" required></p>
-            <a href="#">Recover Password</a><br><br>
-            <p><input type="submit" class="btn btn-primary" id="submitSignIn" value="Sign In" name="signIn"></p>
+        <form id="signInForm">
+            <label for="emailSignIn">Email</label><br>
+            <input type="email" name="email" id="emailSignIn" placeholder="Email" required><br>
+            <label for="passwordSignIn">Password</label><br>
+            <input type="password" name="password" id="passwordSignIn" placeholder="Password" required><br><br>
+            <input type="submit" class="btn btn-primary" value="Sign In" name="signIn">
         </form>
         <p>--------------or--------------</p>
         <p>Sign In Through</p>

@@ -44,14 +44,17 @@
       <a href="#project" class="nav_menu">Projects</a>
       <a href="#feedback" class="nav_menu">Feedback</a>
       <a href="#contact_me" class="nav_menu">Contact Me</a>
-      <a href="login.html" class="nav_menu">Login</a>
-      <button id="logout" class="afterlogin">Logout</button>
+      <a href="login.html" id="loginLink" class="nav_menu">Login</a>
     </div>
   </nav>
+  <div class="afterlogin" id="userDetails">
+    <h1>Welcome, <span id="loggedUserFName">User</span> <span id="loggedUserLName">Name</span></h1>
+    <p>Email: <span id="loggedUserEmail">email@example.com</span></p>
+    <button id="logout" class="btn btn-danger">Logout</button>
+</div>
   <a href='#top'><img src=".\assets\img\top.png" alt="top" class="top" style="bottom: 10px;" /></a>
   <img src=".\assets\img\sun.png" class="sun" alt="light" style="display: none; bottom: 70px;" />
   <img src=".\assets\img\moon.png" div class="moon" alt="dark" style="bottom: 70px;" />
-  <div class="afterlogin"><p>Hello <span id="loggedUserFName"></span> <span id="loggedUserLName"></span></p></div>
   <div id="home" class="hidden">
     <img src=".\assets\img\photo.png" alt="photo" style="filter: drop-shadow(5px 5px 10px #555 );">
     <div class="intro">
@@ -115,23 +118,23 @@
       </div>
     </div>
   </div>
-  <div id="feedback" class="hidden">
+  <div id="feedback">
     <h2>Give me your valuable suggestions</h2>
-    <form action="#" method="get">
-      <label for="Feedback">Feedback:</label><br>
-      <input type="text" placeholder="Enter your feedback" id="Feedback" name="Feedback" required></textarea><br>
-      <label for="Rating">Rating:</label><br>
-      <input type="radio" name="Star1" id="Star1" value="1">
-      <label for="Star1">★</label>
-      <input type="radio" name="Star2" id="Star2" value="2">
-      <label for="Star2">★</label>
-      <input type="radio" name="Star3" id="Star3" value="3">
-      <label for="Star3">★</label>
-      <input type="radio" name="Star4" id="Star4" value="4">
-      <label for="Star4">★</label>
-      <input type="radio" name="Star5" id="Star5" value="5">
-      <label for="Star5">★</label><br>
-      <input type="submit" value="Submit">
+    <form id="feedbackForm">
+        <label for="Feedback">Feedback:</label><br>
+        <textarea placeholder="Enter your feedback" id="Feedback" name="Feedback" required></textarea><br>
+        <label for="Rating">Rating:</label><br>
+        <input type="radio" name="Rating" id="Star1" value="1">
+        <label for="Star1">★</label>
+        <input type="radio" name="Rating" id="Star2" value="2">
+        <label for="Star2">★</label>
+        <input type="radio" name="Rating" id="Star3" value="3">
+        <label for="Star3">★</label>
+        <input type="radio" name="Rating" id="Star4" value="4">
+        <label for="Star4">★</label>
+        <input type="radio" name="Rating" id="Star5" value="5">
+        <label for="Star5">★</label><br>
+        <input type="submit" value="Submit">
     </form>
     <p>Buy me coffee <i class="fa-solid fa-mug-saucer"></i></p>
     <img src="./assets/img/upiscanner.jpg" alt="upi" width="200px" height="200px" />
@@ -154,8 +157,8 @@
     </div>
     <div class="count">
       <p>Date and Time<div class="date"></div></p>
-      <p>No. of Viewer<div class="view"></div></p>
-      <p>No. of Login<div class="login"></div></p>
+      <p>No. of Viewer: <span class="view"></span></p>
+      <p>No. of Login: <span class="login"></span></p>
     </div>
     <div class="copyright">
       <p><i class="fa-solid fa-copyright"></i> 2024 Poovarasan S, All rights reserved |
