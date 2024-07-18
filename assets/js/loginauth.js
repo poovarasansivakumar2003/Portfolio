@@ -34,7 +34,7 @@ const firebaseConfig = {
 
             }
             else{
-                console.log("no document found matching id")
+                console.log("No document found matching id")
             }
         })
         .catch((error)=>{

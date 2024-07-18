@@ -16,15 +16,6 @@ const firebaseConfig = {
  // Initialize Firebase
  const app = initializeApp(firebaseConfig);
 
- function showMessage(message, divId){
-    var messageDiv=document.getElementById(divId);
-    messageDiv.style.display="block";
-    messageDiv.innerHTML=message;
-    messageDiv.style.opacity=1;
-    setTimeout(function(){
-        messageDiv.style.opacity=0;
-    },5000);
- }
  const signUp=document.getElementById('submitSignUp');
  signUp.addEventListener('click', (event)=>{
     event.preventDefault();
@@ -44,24 +35,24 @@ const firebaseConfig = {
             firstName: firstName,
             lastName:lastName
         };
-        showMessage('Account Created Successfully', 'signUpMessage');
+        alert('Account Created Successfully');
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
             window.location.href='login.html';
         })
         .catch((error)=>{
-            console.error("error writing document", error);
+            console.error("Error writing document", error);
 
         });
     })
     .catch((error)=>{
         const errorCode=error.code;
         if(errorCode=='auth/email-already-in-use'){
-            showMessage('Email Address Already Exists !!!', 'signUpMessage');
+            alert('Email Address Already Exists !!!");
         }
         else{
-            showMessage('unable to create User', 'signUpMessage');
+            alert('Unable to create account');
         }
     })
  });
@@ -75,7 +66,7 @@ const firebaseConfig = {
 
     signInWithEmailAndPassword(auth, email,password)
     .then((userCredential)=>{
-        showMessage('login is successful', 'signInMessage');
+        alert('login is successful');
         const user=userCredential.user;
         localStorage.setItem('loggedInUserId', user.uid);
         window.location.href='index.html';
@@ -83,10 +74,10 @@ const firebaseConfig = {
     .catch((error)=>{
         const errorCode=error.code;
         if(errorCode==='auth/invalid-credential'){
-            showMessage('Incorrect Email or Password', 'signInMessage');
+            alert('Incorrect Email or Password');
         }
         else{
-            showMessage('Account does not Exist', 'signInMessage');
+            alert('Account does not Exist');
         }
     })
  })
