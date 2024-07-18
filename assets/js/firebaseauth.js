@@ -49,7 +49,7 @@ const firebaseConfig = {
     .catch((error)=>{
         const errorCode=error.code;
         if(errorCode=='auth/email-already-in-use'){
-            alert('Email Address Already Exists !!!");
+            alert('Email Address Already Exists !!!');
         }
         else{
             alert('Unable to create account');
