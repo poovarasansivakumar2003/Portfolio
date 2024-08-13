@@ -18,62 +18,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 
-// Function to increment viewer count
-const incrementViewerCount = async () => {
-    const docRef = doc(db, "siteStats", "viewerCount");
-    try {
-        await updateDoc(docRef, { count: increment(1) });
-    } catch (error) {
-        if (error.code === 'not-found') {
-            await setDoc(docRef, { count: 1 });
-        } else {
-            console.error("Error incrementing viewer count:", error);
-        }
-    }
-};
-
-// Function to increment login count
-const incrementLoginCount = async () => {
-    const docRef = doc(db, "siteStats", "loginCount");
-    try {
-        await updateDoc(docRef, { count: increment(1) });
-    } catch (error) {
-        if (error.code === 'not-found') {
-            await setDoc(docRef, { count: 1 });
-        } else {
-            console.error("Error incrementing login count:", error);
-        }
-    }
-};
-
-// Function to get viewer and login counts
-const getCounts = async () => {
-    const viewerDocRef = doc(db, "siteStats", "viewerCount");
-    const loginDocRef = doc(db, "siteStats", "loginCount");
-
-    try {
-        const viewerDocSnap = await getDoc(viewerDocRef);
-        const loginDocSnap = await getDoc(loginDocRef);
-
-        if (viewerDocSnap.exists()) {
-            document.querySelector('.view').innerText = viewerDocSnap.data().count;
-        } else {
-            document.querySelector('.view').innerText = 0;
-        }
-
-        if (loginDocSnap.exists()) {
-            document.querySelector('.login').innerText = loginDocSnap.data().count;
-        } else {
-            document.querySelector('.login').innerText = 0;
-        }
-    } catch (error) {
-        console.error("Error getting counts:", error);
-    }
-};
-
-// Increment viewer count on page load
-window.addEventListener('load', incrementViewerCount);
-
 // Check for authentication state change
 onAuthStateChanged(auth, async (user) => {
     const loginLink = document.getElementById('loginLink');
