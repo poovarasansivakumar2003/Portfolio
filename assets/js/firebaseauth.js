@@ -21,6 +21,11 @@ const analytics = getAnalytics(app);
 const auth = getAuth();
 const db = getFirestore();
 
+// Function to handle redirection
+function redirectToHome() {
+    window.location.href = 'index.html';
+}
+
 // Sign Up with Email and Password
 document.getElementById("signUpForm").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -39,7 +44,7 @@ document.getElementById("signUpForm").addEventListener("submit", function(event)
             });
         })
         .then(() => {
-            alert("User registered successfully!");
+            redirectToHome();
         })
         .catch((error) => {
             alert("Error: " + error.message);
@@ -53,8 +58,8 @@ document.getElementById("signInForm").addEventListener("submit", function(event)
     const password = document.getElementById("passwordSignIn").value;
 
     signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            alert("Signed in successfully!");
+        .then(() => {
+            redirectToHome();
         })
         .catch((error) => {
             alert("Error: " + error.message);
@@ -63,26 +68,42 @@ document.getElementById("signInForm").addEventListener("submit", function(event)
 
 // Google Sign In
 const googleProvider = new GoogleAuthProvider();
-document.getElementById("googleSignUp").addEventListener("click", () => signInWithPopup(auth, googleProvider).then(result => {
-    alert("Google Sign Up successful!");
-}).catch(error => {
-    alert("Error: " + error.message);
-}));
-document.getElementById("googleSignIn").addEventListener("click", () => signInWithPopup(auth, googleProvider).then(result => {
-    alert("Google Sign In successful!");
-}).catch(error => {
-    alert("Error: " + error.message);
-}));
+document.getElementById("googleSignUp").addEventListener("click", () => {
+    signInWithPopup(auth, googleProvider)
+        .then(() => {
+            redirectToHome();
+        })
+        .catch((error) => {
+            alert("Error: " + error.message);
+        });
+});
+document.getElementById("googleSignIn").addEventListener("click", () => {
+    signInWithPopup(auth, googleProvider)
+        .then(() => {
+            redirectToHome();
+        })
+        .catch((error) => {
+            alert("Error: " + error.message);
+        });
+});
 
 // Facebook Sign In
 const facebookProvider = new FacebookAuthProvider();
-document.getElementById("facebookSignUp").addEventListener("click", () => signInWithPopup(auth, facebookProvider).then(result => {
-    alert("Facebook Sign Up successful!");
-}).catch(error => {
-    alert("Error: " + error.message);
-}));
-document.getElementById("facebookSignIn").addEventListener("click", () => signInWithPopup(auth, facebookProvider).then(result => {
-    alert("Facebook Sign In successful!");
-}).catch(error => {
-    alert("Error: " + error.message);
-}));
+document.getElementById("facebookSignUp").addEventListener("click", () => {
+    signInWithPopup(auth, facebookProvider)
+        .then(() => {
+            redirectToHome();
+        })
+        .catch((error) => {
+            alert("Error: " + error.message);
+        });
+});
+document.getElementById("facebookSignIn").addEventListener("click", () => {
+    signInWithPopup(auth, facebookProvider)
+        .then(() => {
+            redirectToHome();
+        })
+        .catch((error) => {
+            alert("Error: " + error.message);
+        });
+});
