@@ -122,14 +122,15 @@
             text-align: center;
         }
 
-        .icons{
-            display:flex; 
+        .icons {
+            display: flex;
             justify-content: center;
         }
 
         .icons a {
             font-size: xx-large;
             padding: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -161,12 +162,12 @@
             <input type="password" name="password" id="passwordSignUp" placeholder="Password" required><br><br>
             <input type="submit" class="btn btn-primary" value="Sign Up" name="signUp" id="signUp-btn">
         </form>
-        
+
         <p>--------------or--------------</p>
         <p>Sign Up Through</p>
         <div class="icons">
-            <a href="#"><i class="fa-brands fa-google" id="googleSignUp"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook" id="facebookSignUp"></i></a>
+            <i class="fa-brands fa-google" id="googleSignUp"></i>
+            <i class="fa-brands fa-facebook" id="facebookSignUp"></i>
         </div>
         <p>--------------or--------------</p>
         <p>Already Have Account?</p>
@@ -186,14 +187,15 @@
         <p>--------------or--------------</p>
         <p>Sign In Through</p>
         <div class="icons">
-            <a href="#"><i class="fa-brands fa-google" id="googleSignUp"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook" id="facebookSignUp"></i></a>
+            <i class="fa-brands fa-google" id="googleSignIn"></i>
+            <i class="fa-brands fa-facebook" id="facebookSignIn"></i>
         </div>
         <p>--------------or--------------</p>
         <p>Don't have account yet?</p>
         <p><button id="signUpButton" class="btn btn-primary">Sign Up</button>
         <a href="index.html"><input type="button" class="btn btn-primary" value="Home page"></a></p>
     </div>
+
     <script>
         $(document).ready(function () {
             $("#loading").hide();
@@ -220,9 +222,6 @@
                 });
                 $(".moon").show(1000);
                 $(".sun").hide(1000);
-            });
-            $(".icons").click(function(){
-                alert("Coming Soon")
             });
         });
     </script>
