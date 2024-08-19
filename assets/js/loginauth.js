@@ -53,7 +53,6 @@ onAuthStateChanged(auth, async (user) => {
         userDetails.style.display = 'none';
         localStorage.removeItem('loggedInUserId');
     }
-    getCounts();
 });
 
 // Handle feedback form submission
