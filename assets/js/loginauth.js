@@ -40,7 +40,6 @@ onAuthStateChanged(auth, async (user) => {
                 document.getElementById('loggedUserEmail').innerText = userData.email;
                 loginLink.style.display = 'none';
                 userDetails.style.display = 'block';
-                incrementLoginCount();
             } else {
                 console.log("No document found matching ID");
             }
