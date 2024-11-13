@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Auth Page</title>
     <link rel="icon" href="./assets/img/favicon.png" type="favicon">
+    <script type="module" src="./assets/js/firebaseauth.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/js/firebaseauth.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -63,16 +63,16 @@
             <!-- Auth Card -->
             <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 transform transition-all duration-300 hover:scale-[1.02]">
                 <!-- Sign In Form -->
-                <div id="signInForm" class="slide-in">
+                <div id="signInForms" class="slide-in">
                     <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-8">Thank you for coming here</h2>
-                    <form class="space-y-6">
+                    <form id="signInForm" class="space-y-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-                            <input type="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                            <input type="email" id="emailSignIn" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Password</label>
-                            <input type="password" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                            <input type="password" id="passwordSignIn" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
                         </div>
                         <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
                             Sign In
@@ -90,11 +90,11 @@
                         </div>
 
                         <div class="mt-6 grid grid-cols-2 gap-4">
-                            <button class="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors dark:text-white">
+                            <button id="googleSignIn" class="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors dark:text-white">
                                 <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5 mr-2" alt="Google">
                                 Google
                             </button>
-                            <button class="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors dark:text-white">
+                            <button id="facebookSignIn" class="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors dark:text-white">
                                 <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5 mr-2" alt="Facebook">
                                 Facebook
                             </button>
@@ -103,33 +103,34 @@
 
                     <p class="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
                         Don't have an account?
-                        <button id="showSignUp" class="font-medium text-blue-600 hover:text-blue-500">Sign up</button>
+                        <button id="showSignUp" class="font-medium text-blue-600 hover:text-blue-500">Sign up</button><br>
+                        <a href="index.html" class="font-medium text-blue-600 hover:text-blue-500">Home Page</a>
                     </p>
                 </div>
 
                 <!-- Sign Up Form -->
-                <div id="signUpForm" class="hidden">
+                <div id="signUpForms" class="hidden">
                     <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-8">Create Account</h2>
-                    <form class="space-y-6">
+                    <form id="signUpForm" class="space-y-6">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">First Name</label>
-                                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                                <input type="text" id="fName" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Last Name</label>
-                                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                                <input type="text" id="lName" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
                             </div>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-                            <input type="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                            <input type="email" id="emailSignUp" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Password</label>
-                            <input type="password" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+                            <input type="password" id="passwordSignUp" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                        <button type="submit" id="signUp-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
                             Sign Up
                         </button>
                     </form>
@@ -145,11 +146,11 @@
                         </div>
 
                         <div class="mt-6 grid grid-cols-2 gap-4">
-                            <button class="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors dark:text-white">
+                            <button id="googleSignUp" class="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors dark:text-white">
                                 <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5 mr-2" alt="Google">
                                 Google
                             </button>
-                            <button class="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors dark:text-white">
+                            <button id="facebookSignUp"class="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors dark:text-white">
                                 <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5 mr-2" alt="Facebook">
                                 Facebook
                             </button>
@@ -158,7 +159,8 @@
 
                     <p class="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
                         Already have an account?
-                        <button id="showSignIn" class="font-medium text-blue-600 hover:text-blue-500">Sign in</button>
+                        <button id="showSignIn" class="font-medium text-blue-600 hover:text-blue-500">Sign in</button><br>
+                        <a href="index.html" class="font-medium text-blue-600 hover:text-blue-500">Home Page</a>
                     </p>
                 </div>
             </div>
@@ -181,8 +183,8 @@
         });
 
         // Form Toggle
-        const signInForm = document.getElementById('signInForm');
-        const signUpForm = document.getElementById('signUpForm');
+        const signInForm = document.getElementById('signInForms');
+        const signUpForm = document.getElementById('signUpForms');
         const showSignUp = document.getElementById('showSignUp');
         const showSignIn = document.getElementById('showSignIn');
 
