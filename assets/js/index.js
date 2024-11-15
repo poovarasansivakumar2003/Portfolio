@@ -80,26 +80,21 @@ window.onclick = (event) => {
 
 // Navbar and Scroll-to-Top Button
 const navbar = document.querySelector('.navbar');
-const userDetails = document.querySelector('.userDetails');
 const topButton = document.querySelector('.top-button');
 let lastScroll = window.scrollY;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
-
     // Navbar hide/show logic based on scroll direction
     if (currentScroll > lastScroll) {
         navbar.style.transform = 'translateY(-100%)';
-        userDetails.style.display = 'none';
     } else {
         navbar.style.transform = 'translateY(0)';
-        userDetails.style.display = 'block';
     }
     lastScroll = currentScroll;
 
     // Toggle navbar scrolled class based on position
     navbar.classList.toggle('scrolled', window.scrollY > 50);
-    userDetails.classList.toggle('scrolled', window.scrollY > 50);
 
     // Show/hide top button based on scroll position
     topButton.classList.toggle('show', window.scrollY > 300);
