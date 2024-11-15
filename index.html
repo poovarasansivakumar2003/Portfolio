@@ -22,7 +22,7 @@
     <script src="./assets/js/tailwindcss.js"></script>
 </head>
 
-<body>
+<body class="bg-gradient-to-r from-black">
     <!-- Loader -->
     <div class="loader" id="loader">
         <div class="loader-text">
@@ -70,7 +70,12 @@
 
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero relative" id="home">
+        <!-- animation -->
+        <div class="absolute inset-0 w-svw h-full">
+            <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
+            <div class="absolute inset-0 w-svw h-full bg-rays animate-rays-asymmetric"></div>
+        </div>
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Hello, I'm Poovarasan</h1>
@@ -85,8 +90,15 @@
     </section>
 
     <!-- About section -->
-    <h2 class="text-4xl section-title">About Me</h2>
-    <section id="about" class="flex flex-col max-w-7xl m-20 rounded-xl shadow-lg p-16 gap-4 space-y-6" style="background-color: #141515;  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+    <section class="relative overflow-hidden">
+        <h2 class="text-4xl section-title">About Me</h2>
+        <div id="about" class="flex flex-col max-w-7xl m-20 rounded-xl shadow-lg p-16 gap-4 space-y-6 "
+            style="background-color: #141515;  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+            <!-- animation -->
+            <div class="absolute inset-0 w-svw h-full">
+                <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
+                <div class="absolute inset-0 w-svw h-full bg-rays animate-rays-asymmetric"></div>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                 <div class="stat-item">
                     <span class="stat-number text-3xl font-bold">2+</span>
@@ -128,310 +140,330 @@
     </section>
 
     <!-- Projects Section -->
-    <h2 class="text-4xl section-title">Featured Projects</h2>
-    <section class="projects" id="projects">
-        <div class="box-item">
-            <div class="flip-box">
-                <div class="flip-box-front">
-                    <div class="inner">
-                        <h3 class="flip-box-header">Web Sprint</h3>
-                        <p>A Tic Tac Toe Game Using HTML, CSS, Javascript</p>
-                        <img src="./assets/img/cta-arrow.png" alt="arrow" class="flip-box-img" loading="lazy">
+    <div class="relative overflow-hidden">
+        <!-- animation -->
+        <div class="absolute inset-0 w-svw h-full">
+            <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
+            <div class="absolute inset-0 w-svw h-full bg-rays animate-rays-asymmetric"></div>
+        </div>
+        <h2 class="text-4xl section-title">Featured Projects</h2>
+        <div class="projects" id="projects">
+            <div class="box-item">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                        <div class="inner">
+                            <h3 class="flip-box-header">Web Sprint</h3>
+                            <p>A Tic Tac Toe Game Using HTML, CSS, Javascript</p>
+                            <img src="./assets/img/cta-arrow.png" alt="arrow" class="flip-box-img" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="inner">
+                            <h3 class="flip-box-header">Here is my</h3>
+                            <a href="https://github.com/poovarasansivakumar2003/Web-App-Sprint" target="_blank">
+                                <button class="flip-box-button">Repository Link <i class="fab fa-github"></i> </button>
+                            </a>
+                            <a href="https://poovarasansivakumar2003.github.io/Web-App-Sprint/" target="_blank">
+                                <button class="flip-box-button">Web Link</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="flip-box-back">
-                    <div class="inner">
-                        <h3 class="flip-box-header">Here is my</h3>
-                        <a href="https://github.com/poovarasansivakumar2003/Web-App-Sprint" target="_blank">
-                            <button class="flip-box-button">Repository Link <i class="fab fa-github"></i> </button>
-                        </a>
-                        <a href="https://poovarasansivakumar2003.github.io/Web-App-Sprint/" target="_blank">
-                            <button class="flip-box-button">Web Link</button>
-                        </a>
+            </div>
+            <div class="box-item">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                        <div class="inner">
+                            <h3 class="flip-box-header">Codefury 6.0</h3>
+                            <p>A national level 24-hour hackathon conducted by IEEE UVCE</p>
+                            <img src="./assets/img/cta-arrow.png" alt="arrow" class="flip-box-img" loading="lazy" ;>
+                        </div>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="inner">
+                            <h3 class="flip-box-header">Here is my</h3>
+                            <a href="https://github.com/poovarasansivakumar2003/Codefury-6.0" target="_blank"><button
+                                    class="flip-box-button">Repository link <i class="fab fa-github"></i></button></a>
+                            <a href="https://poovarasansivakumar2003.github.io/Codefury-6.0/" target="_blank"><button
+                                    class="flip-box-button">Web Link</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-item">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">BitNBuild 23</h3>
+                            <p>A International level 24-hour hackathon conducted by GDSC CRCE</p>
+                            <img src="./assets/img/cta-arrow.png" alt="arrow" class="flip-box-img" loading="lazy" ;>
+                        </div>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="inner">
+                            <h3 class="flip-box-header">Here is my</h3>
+                            <a href="https://github.com/poovarasansivakumar2003/BitNBuild-SPRint-team"
+                                target="_blank"><button class="flip-box-button">Repository
+                                    link <i class="fab fa-github"></i></button></a>
+                            <a href="https://poovarasansivakumar2003.github.io/BitNBuild-SPRint-team/"
+                                target="_blank"><button class="flip-box-button">Web
+                                    Link</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-item">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">Codefury 7.0</h3>
+                            <p>A national level 24-hour hackathon conducted by IEEE UVCE</p>
+                            <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
+                        </div>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">Here is my</h3>
+                            <a href="https://github.com/poovarasansivakumar2003/Codefury-7.0" target="_blank"><button
+                                    class="flip-box-button">Repository
+                                    link <i class="fab fa-github"></i></button></a>
+                            <a href="https://codefury-7-0-ravitejas-projects-7097fbe7.vercel.app/"
+                                target="_blank"><button class="flip-box-button">Web
+                                    Link</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-item">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">BitNBuild 24</h3>
+                            <p>A International level 24-hour hackathon conducted by GDSC CRCE</p>
+                            <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
+                        </div>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">Here is my</h3>
+                            <a href="https://github.com/poovarasansivakumar2003/completeRepo" target="_blank"><button
+                                    class="flip-box-button">Repository link
+                                    <i class="fab fa-github"></i></button></a>
+                            <a href="https://completerepo.onrender.com/home" target="_blank"><button
+                                    class="flip-box-button">Web
+                                    Link</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-item">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">Web Design Laboratory</h3>
+                            <p>Welcome to my collection of web design projects developed during my 4th semester lab</p>
+                            <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
+                        </div>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">Here is my</h3>
+                            <a href="https://github.com/poovarasansivakumar2003/webdesign" target="_blank"><button
+                                    class="flip-box-button">Repository
+                                    link <i class="fab fa-github"></i></button></a>
+                            <a href="https://poovarasansivakumar2003.github.io/webdesign/" target="_blank"><button
+                                    class="flip-box-button">Web
+                                    Link</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-item">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">Marvel Task</h3>
+                            <p>Here is my MARVEL Batch 4 repository! This repository contains reports and tasks related
+                                to
+                                AIML course as given in hub.uvcemarvel.in.</p>
+                            <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
+                        </div>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">Here is my</h3>
+                            <a href="https://github.com/poovarasansivakumar2003/Marvel_Batch_4_works"
+                                target="_blank"><button class="flip-box-button">Repository
+                                    link <i class="fab fa-github"></i></button></a>
+                            <a href="https://poovarasansivakumar2003.github.io/Marvel_Batch_4_works/"
+                                target="_blank"><button class="flip-box-button">Web
+                                    Link</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-item">
+                <div class="flip-box">
+                    <div class="flip-box-front">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">Securehack</h3>
+                            <p>A 24-hour National Level Cybersecurity Hackathon organized by Vemana Institute of
+                                Technology
+                                and GITAM University, Hyderabad</p>
+                            <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
+                        </div>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="inner  ">
+                            <h3 class="flip-box-header">Here is my</h3>
+                            <a href="https://github.com/poovarasansivakumar2003/securehackthon" target="_blank"><button
+                                    class="flip-box-button">Repository
+                                    link <i class="fab fa-github"></i></button></a>
+                            <a href="https://securathon.onrender.com/" target="_blank"><button
+                                    class="flip-box-button">Web
+                                    Link</button></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="box-item">
-            <div class="flip-box">
-                <div class="flip-box-front">
-                    <div class="inner">
-                        <h3 class="flip-box-header">Codefury 6.0</h3>
-                        <p>A national level 24-hour hackathon conducted by IEEE UVCE</p>
-                        <img src="./assets/img/cta-arrow.png" alt="arrow" class="flip-box-img" loading="lazy" ;>
-                    </div>
-                </div>
-                <div class="flip-box-back">
-                    <div class="inner">
-                        <h3 class="flip-box-header">Here is my</h3>
-                        <a href="https://github.com/poovarasansivakumar2003/Codefury-6.0" target="_blank"><button
-                                class="flip-box-button">Repository link <i class="fab fa-github"></i></button></a>
-                        <a href="https://poovarasansivakumar2003.github.io/Codefury-6.0/" target="_blank"><button
-                                class="flip-box-button">Web Link</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="box-item">
-            <div class="flip-box">
-                <div class="flip-box-front">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">BitNBuild 23</h3>
-                        <p>A International level 24-hour hackathon conducted by GDSC CRCE</p>
-                        <img src="./assets/img/cta-arrow.png" alt="arrow" class="flip-box-img" loading="lazy" ;>
-                    </div>
-                </div>
-                <div class="flip-box-back">
-                    <div class="inner">
-                        <h3 class="flip-box-header">Here is my</h3>
-                        <a href="https://github.com/poovarasansivakumar2003/BitNBuild-SPRint-team"
-                            target="_blank"><button class="flip-box-button">Repository
-                                link <i class="fab fa-github"></i></button></a>
-                        <a href="https://poovarasansivakumar2003.github.io/BitNBuild-SPRint-team/"
-                            target="_blank"><button class="flip-box-button">Web
-                                Link</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="box-item">
-            <div class="flip-box">
-                <div class="flip-box-front">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">Codefury 7.0</h3>
-                        <p>A national level 24-hour hackathon conducted by IEEE UVCE</p>
-                        <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
-                    </div>
-                </div>
-                <div class="flip-box-back">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">Here is my</h3>
-                        <a href="https://github.com/poovarasansivakumar2003/Codefury-7.0" target="_blank"><button
-                                class="flip-box-button">Repository
-                                link <i class="fab fa-github"></i></button></a>
-                        <a href="https://codefury-7-0-ravitejas-projects-7097fbe7.vercel.app/" target="_blank"><button
-                                class="flip-box-button">Web
-                                Link</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="box-item">
-            <div class="flip-box">
-                <div class="flip-box-front">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">BitNBuild 24</h3>
-                        <p>A International level 24-hour hackathon conducted by GDSC CRCE</p>
-                        <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
-                    </div>
-                </div>
-                <div class="flip-box-back">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">Here is my</h3>
-                        <a href="https://github.com/poovarasansivakumar2003/completeRepo" target="_blank"><button
-                                class="flip-box-button">Repository
-                                <i class="fab fa-github"></i></button></a>
-                        <a href="https://completerepo.onrender.com/home" target="_blank"><button
-                                class="flip-box-button">Web
-                                Link</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="box-item">
-            <div class="flip-box">
-                <div class="flip-box-front">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">Web Design Laboratory</h3>
-                        <p>Welcome to my collection of web design projects developed during my 4th semester lab</p>
-                        <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
-                    </div>
-                </div>
-                <div class="flip-box-back">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">Here is my</h3>
-                        <a href="https://github.com/poovarasansivakumar2003/webdesign" target="_blank"><button
-                                class="flip-box-button">Repository
-                                link <i class="fab fa-github"></i></button></a>
-                        <a href="https://poovarasansivakumar2003.github.io/webdesign/" target="_blank"><button
-                                class="flip-box-button">Web
-                                Link</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="box-item">
-            <div class="flip-box">
-                <div class="flip-box-front">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">Marvel Task</h3>
-                        <p>Here is my MARVEL Batch 4 repository! This repository contains reports and tasks related to
-                            AIML course as given in hub.uvcemarvel.in.</p>
-                        <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
-                    </div>
-                </div>
-                <div class="flip-box-back">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">Here is my</h3>
-                        <a href="https://github.com/poovarasansivakumar2003/Marvel_Batch_4_works"
-                            target="_blank"><button class="flip-box-button">Repository
-                                link <i class="fab fa-github"></i></button></a>
-                        <a href="https://poovarasansivakumar2003.github.io/Marvel_Batch_4_works/"
-                            target="_blank"><button class="flip-box-button">Web
-                                Link</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="box-item">
-            <div class="flip-box">
-                <div class="flip-box-front">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">Securehack</h3>
-                        <p>A 24-hour National Level Cybersecurity Hackathon organized by Vemana Institute of Technology
-                            and GITAM University, Hyderabad</p>
-                        <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
-                    </div>
-                </div>
-                <div class="flip-box-back">
-                    <div class="inner  ">
-                        <h3 class="flip-box-header">Here is my</h3>
-                        <a href="https://github.com/poovarasansivakumar2003/securehackthon" target="_blank"><button
-                                class="flip-box-button">Repository
-                                link <i class="fab fa-github"></i></button></a>
-                        <a href="https://securathon.onrender.com/" target="_blank"><button class="flip-box-button">Web
-                                Link</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- feedback -->
-    <h2 class="text-4xl section-title mt-9">Your Feedback Matters</h2>
-    <section class="feedback-section" id="feedback">
-        <form class="feedback-form" id="feedbackForm">
-            <div class="form-group">
-                <label for="Feedback">Share Your Thoughts</label>
-                <textarea class="feedback-textarea" id="Feedback" name="Feedback"
-                    placeholder="I'd love to hear your feedback..." required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Rate Your Experience</label>
-                <div class="rating-group">
-                    <input type="radio" name="Rating" id="Star5" value="5">
-                    <label for="Star5">★</label>
-                    <input type="radio" name="Rating" id="Star4" value="4">
-                    <label for="Star4">★</label>
-                    <input type="radio" name="Rating" id="Star3" value="3">
-                    <label for="Star3">★</label>
-                    <input type="radio" name="Rating" id="Star2" value="2">
-                    <label for="Star2">★</label>
-                    <input type="radio" name="Rating" id="Star1" value="1">
-                    <label for="Star1">★</label>
-                </div>
-            </div>
-            <button type="submit" class="submit-btn">Submit Feedback</button>
-        </form>
-
-
-        <!-- payment -->
-        <div class="bg-white/10 backdrop-blur-md border border-white/20 text-white py-2 px-8 rounded-lg transition duration-300 hover:shadow-glow m-10 hover:-translate-y-2"
-            onclick="showModal()">
-            Buy Me Coffee
+    <section class="relative overflow-hidden">
+        <!-- animation -->
+        <div class="absolute inset-0 w-svw h-full">
+            <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
+            <div class="absolute inset-0 w-svw h-full bg-rays animate-rays-asymmetric"></div>
         </div>
-        <div id="paymentModal" class="modal">
-            <div class="modal-content">
-                <div class="payment-options">
-                    <div class="payment-option" onclick="showPaymentForm('card')">
-                        <i class="fas fa-credit-card"></i>
-                        <p>Card Payment</p>
-                    </div>
-                    <div class="payment-option" onclick="showPaymentForm('upi')">
-                        <i class="fas fa-mobile-alt"></i>
-                        <p>UPI Payment</p>
+        <h2 class="text-4xl section-title mt-9">Your Feedback Matters</h2>
+        <div class="feedback-section " id="feedback">
+            <form class="feedback-form" id="feedbackForm">
+                <div class="form-group">
+                    <label for="Feedback">Share Your Thoughts</label>
+                    <textarea class="feedback-textarea" id="Feedback" name="Feedback"
+                        placeholder="I'd love to hear your feedback..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Rate Your Experience</label>
+                    <div class="rating-group">
+                        <input type="radio" name="Rating" id="Star5" value="5">
+                        <label for="Star5">★</label>
+                        <input type="radio" name="Rating" id="Star4" value="4">
+                        <label for="Star4">★</label>
+                        <input type="radio" name="Rating" id="Star3" value="3">
+                        <label for="Star3">★</label>
+                        <input type="radio" name="Rating" id="Star2" value="2">
+                        <label for="Star2">★</label>
+                        <input type="radio" name="Rating" id="Star1" value="1">
+                        <label for="Star1">★</label>
                     </div>
                 </div>
-                <div id="cardPayment" class="payment-form">
-                    <div class="form-group">
-                        <label>Card Number</label>
-                        <input type="text" placeholder="1234 5678 9012 3456">
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+
+
+            <!-- payment -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 text-white py-2 px-8 rounded-lg transition duration-300 hover:shadow-glow m-10 hover:-translate-y-1"
+                onclick="showModal()">
+                Buy Me Coffee
+            </div>
+            <div id="paymentModal" class="modal">
+                <div class="modal-content">
+                    <div class="payment-options">
+                        <div class="payment-option" onclick="showPaymentForm('card')">
+                            <i class="fas fa-credit-card"></i>
+                            <p>Card Payment</p>
+                        </div>
+                        <div class="payment-option" onclick="showPaymentForm('upi')">
+                            <i class="fas fa-mobile-alt"></i>
+                            <p>UPI Payment</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Expiry Date</label>
-                        <input type="text" placeholder="MM/YY">
+                    <div id="cardPayment" class="payment-form">
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="form-group">
+                            <label>Expiry Date</label>
+                            <input type="text" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" placeholder="123">
+                        </div>
+                        <button class="pay-button">Pay ₹100</button>
                     </div>
-                    <div class="form-group">
-                        <label>CVV</label>
-                        <input type="text" placeholder="123">
+                    <div id="upiPayment" class="payment-form">
+                        <img src="./assets/img/upiscanner.jpg" alt="UPI QR Code" load="lazy" class="upi-qr">
+                        <button class="pay-button">Pay ₹100</button>
                     </div>
-                    <button class="pay-button">Pay ₹100</button>
-                </div>
-                <div id="upiPayment" class="payment-form">
-                    <img src="./assets/img/upiscanner.jpg" alt="UPI QR Code" load="lazy" class="upi-qr">
-                    <button class="pay-button">Pay ₹100</button>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <nav class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
+    <div style="background: #141515;">
+        <section class="contact" id="contact">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <nav class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
 
-        <h2 class="text-2xl section-title">Connect With Me</h2>
+            <h2 class="text-2xl section-title">Connect With Me</h2>
 
-        <div class="social-links">
-            <a href="https://github.com/poovarasansivakumar2003" class="social-link" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/poovarasan-s-a69128260/" class="social-link" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="mailto:poovarasansivakumar2003@gmail.com" class="social-link">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://wa.me/qr/2YT2WUPUM6L6H1" class="social-link" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.instagram.com/poovarasansivakumar2003/" class="social-link" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://m.facebook.com/poovarasansivakumar2003" class="social-link" target="_blank">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://x.com/Poovara79282181" class="social-link" target="_blank">
-                <i class="fab fa-x-twitter"></i>
-            </a>
-            <a href="https://www.youtube.com/@poovarasansivakumar2003" class="social-link" target="_blank">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://t.me/poovarasansivakumar2003" class="social-link" target="_blank">
-                <i class="fab fa-telegram"></i>
-            </a>
-        </div>
-
-        <div class="copyright">
-            <p><i class="fa-solid fa-copyright"></i> 2024 Poovarasan S, All rights reserved |
-                <a href="https://github.com/poovarasansivakumar2003/Portfolio/blob/master/LICENSE.md" target="_blank"
-                    class="license-link">license</a> |
-            </p>
-        </div>
-    </section>
+            <div class="social-links">
+                <a href="https://github.com/poovarasansivakumar2003" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/poovarasan-s-a69128260/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:poovarasansivakumar2003@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/qr/2YT2WUPUM6L6H1" class="social-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/poovarasansivakumar2003/" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://m.facebook.com/poovarasansivakumar2003" class="social-link" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://x.com/Poovara79282181" class="social-link" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/@poovarasansivakumar2003" class="social-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://t.me/poovarasansivakumar2003" class="social-link" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                <p><i class="fa-solid fa-copyright"></i> 2024 Poovarasan S, All rights reserved |
+                    <a href="https://github.com/poovarasansivakumar2003/Portfolio/blob/master/LICENSE.md"
+                        target="_blank" class="license-link">license</a> |
+                </p>
+            </div>
+        </section>
+    </div>
 
     <!-- Top Button -->
     <div class="top-button" onclick="scrollToTop()">
         <i class="fas fa-arrow-up"></i>
     </div>
+
     <script src="./assets/js/index.js"></script>
     <script type="application/ld+json">
         {
@@ -439,7 +471,7 @@
           "@type": "Person",
           "name": "Poovarasan S",
           "jobTitle": "Web Developer & Designer",
-          "url": "https://yourwebsite.com",
+          "url": "https://poovarasansivakumar2003.github.io/Portfolio/",
           "sameAs": [
             "https://github.com/poovarasansivakumar2003",
             "https://www.linkedin.com/in/poovarasan-s-a69128260/",
@@ -455,7 +487,5 @@
           }
         }
     </script>
-
 </body>
-
 </html>
