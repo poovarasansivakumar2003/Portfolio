@@ -21,6 +21,7 @@ const db = getFirestore(app);
 // Check for authentication state change
 onAuthStateChanged(auth, async (user) => {
     const loginLink = document.getElementById('loginLink');
+    const logout = document.getElementById('logout');
     const userDetails = document.getElementById('userDetails');
 
     if (user) {
@@ -39,7 +40,8 @@ onAuthStateChanged(auth, async (user) => {
                 document.getElementById('loggedUserLName').innerText = userData.lastName;
                 document.getElementById('loggedUserEmail').innerText = userData.email;
                 loginLink.style.display = 'none';
-                userDetails.style.display = 'block';
+                userDetails.style.display = 'flex';
+                logout.style.display = 'block';
             } else {
                 console.log("No document found matching ID");
             }
@@ -50,6 +52,7 @@ onAuthStateChanged(auth, async (user) => {
         console.log("No user is signed in.");
         loginLink.style.display = 'block';
         userDetails.style.display = 'none';
+        logout.style.display = 'none';
         localStorage.removeItem('loggedInUserId');
     }
 });
