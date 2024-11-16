@@ -30,7 +30,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Loader */
 .loader {
     position: fixed;
     top: 0;
@@ -68,13 +67,11 @@ html {
     from {
         opacity: 0;
         scale: 0.5;
-        /* clip-path: inset (100% 100% 0 0); */
     }
 
     to {
         opacity: 1;
         scale: 1;
-        /* clip-path: inset(0 0 0 0); */
     }
 }
 
@@ -155,7 +152,6 @@ section {
     color: var(--primary);
 }
 
-/* Responsive Styles */
 @media (max-width: 990px) {
     .nav-links {
         display: none;
@@ -166,7 +162,6 @@ section {
         top: 100%;
         left: 0;
         background: rgba(25, 26, 26, 0.95);
-        ;
         width: 35%;
         height: 100vh;
         padding: 1rem 2rem;
@@ -187,7 +182,8 @@ section {
         width: 100%;
     }
 }
-/* Keyframe animations for particles and rays */
+
+/* animations */
 @keyframes particles-asymmetric {
     0% {
         transform: translateX(-15%) translateY(5%);
@@ -232,70 +228,66 @@ section {
     }
 }
 
-/* Background for particles */
 .bg-particles {
     background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-    background-size: 4vw 4vw; /* responsive background size */
+    background-size: 4vw 4vw;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Make sure it's behind other content */
-    will-change: transform; /* Hints to browser to optimize performance */
+    z-index: -1;
+    will-change: transform;
 }
 
-/* Background for rays */
 .bg-rays {
     background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
         radial-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px);
-    background-size: 5vw 5vw; /* responsive background size */
+    background-size: 5vw 5vw;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -2; /* Ensure it's behind the particles */
-    will-change: transform; /* Hints to browser to optimize performance */
+    z-index: -2;
+    will-change: transform;
 }
 
-/* Animations */
 .animate-particles-asymmetric {
-    animation: particles-asymmetric 120s ease-in-out infinite; /* Extended duration for smoother motion */
+    animation: particles-asymmetric 120s ease-in-out infinite;
 }
 
 .animate-rays-asymmetric {
-    animation: rays-asymmetric 180s ease-in-out infinite; /* Extended duration for smoother motion */
+    animation: rays-asymmetric 180s ease-in-out infinite;
 }
 
-/* Responsive adjustments */
 @media (max-width: 1200px) {
     .bg-particles {
-        background-size: 6vw 6vw; /* Adjust size for large screens */
+        background-size: 6vw 6vw;
     }
 
     .bg-rays {
-        background-size: 7vw 7vw; /* Adjust size for large screens */
+        background-size: 7vw 7vw;
     }
 }
 
 @media (max-width: 768px) {
     .bg-particles {
-        background-size: 8vw 8vw; /* Larger background elements for medium screens */
+        background-size: 8vw 8vw;
     }
 
     .bg-rays {
-        background-size: 9vw 9vw; /* Larger background elements for medium screens */
+        background-size: 9vw 9vw;
     }
 }
 
 @media (max-width: 480px) {
     .bg-particles {
-        background-size: 10vw 10vw; /* Even larger background elements for mobile */
+        background-size: 10vw 10vw;
     }
 
     .bg-rays {
-        background-size: 12vw 12vw; /* Even larger background elements for mobile */
+        background-size: 12vw 12vw;
     }
 }
 
@@ -311,7 +303,6 @@ section {
     display: contents;
 }
 
-/* Semicircular Design */
 #userDetails {
     display: none;
     flex-direction: column;
@@ -336,7 +327,6 @@ section {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    /* width: 100%; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -431,7 +421,7 @@ section {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #141515;  
+    background-color: #141515;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     color: #fff;
 }
@@ -781,7 +771,7 @@ section {
         gap: 1rem;
     }
 
-    .social-link{
+    .social-link {
         font-size: 1.5rem;
     }
 
@@ -798,10 +788,6 @@ section {
 @media (max-width: 480px) {
     .contact {
         padding: 1rem;
-    }
-
-    .social-links{
-        flex-direction: column;
     }
 
     .social-link {
