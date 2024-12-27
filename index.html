@@ -4,22 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poovarasan Portfolio</title>
     <meta name="author" content="Poovarasan S">
-    <meta name="description"
-        content="Explore Poovarasan S's portfolio, featuring web development and design projects, technical skills, and more.">
-    <meta property="og:keywords"
-        content="Poovarasan Portfolio,poovarasan portfolio,PoovarasanPortfolio,poovarasanportfolio,Poovarasan S,poovarasan,UVCE,Uvce,uvce,poovarasansivakumar2003,Poovarasansivakumar2003">
-    <meta property="og:description"
-        content="Explore Poovarasan S's portfolio, featuring web development and design projects, technical skills, and more.">
+    <meta name="description" content="Explore Poovarasan S's portfolio, featuring web development and design projects, technical skills, and more.">
+    <meta name="keywords" content="Poovarasan Portfolio,poovarasan portfolio,PoovarasanPortfolio,poovarasanportfolio,Poovarasan S,poovarasan,UVCE,Uvce,uvce,poovarasansivakumar2003,Poovarasansivakumar2003">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://poovarasansivakumar2003.github.io/Portfolio/">
+    <meta property="og:title" content="Poovarasan S - Web Developer & Designer">
+    <meta property="og:description" content="Explore Poovarasan S's portfolio, featuring web development and design projects, technical skills, and more.">
     <meta property="og:image" content="https://poovarasansivakumar2003.github.io/Portfolio/assets/img/photo.png">
     <meta property="og:url" content="https://poovarasansivakumar2003.github.io/Portfolio/">
     <meta property="og:type" content="website">
-    <title>Poovarasan Portfolio</title>
-    <link rel="icon" href="./assets/img/favicon.png" type="favicon">
-    <script type="module" src="./assets/js/loginauth.js"></script>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Poovarasan S Portfolio">
+    <meta property="og:updated_time" content="2024-12-27T12:00:00+00:00">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Poovarasan S - Web Developer & Designer">
+    <meta name="twitter:description" content="Explore Poovarasan S's portfolio, featuring web development and design projects, technical skills, and more.">
+    <meta name="twitter:image" content="https://poovarasansivakumar2003.github.io/Portfolio/assets/img/photo.png">
+    <meta name="twitter:site" content="@yourTwitterHandle">
+    <meta name="DC.title" content="Poovarasan S - Portfolio">
+    <meta name="DC.creator" content="Poovarasan S">
+    <meta name="DC.description" content="Explore Poovarasan S's portfolio, featuring web development and design projects, technical skills, and more.">
+    <meta name="DC.language" content="en">
+    <link rel="icon" href="./assets/img/favicon.png" type="image/png">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/tailwindcss.js"></script>
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+    <script defer src="./assets/js/index.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Poovarasan S",
+      "jobTitle": "Web Developer & Designer",
+      "url": "https://poovarasansivakumar2003.github.io/Portfolio/",
+      "sameAs": [
+        "https://github.com/poovarasansivakumar2003",
+        "https://www.linkedin.com/in/poovarasan-s-a69128260/",
+        "https://www.instagram.com/poovarasansivakumar2003/"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University Visvesvaraya College of Engineering",
+        "url": "https://uvce.ac.in/"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Poovarasan Portfolio",
+        "url": "https://poovarasansivakumar2003.github.io/Portfolio/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "addressCountry": "India"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Personal",
+        "email": "poovarasansivakumar2003@gmail.com"
+      },
+      "image": "https://poovarasansivakumar2003.github.io/Portfolio/assets/img/photo.png"
+    }
+    </script>
 </head>
 
 <body>
@@ -78,9 +127,8 @@
         </div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Hello, I'm Poovarasan</h1>
-                <p>Information Science & Engineering student at UVCE, passionate about innovative solutions, Arduino
-                    projects, graphic design, and web development.</p>
+                <h1><span id="headTyping"></span></h1>
+                <p><span id="paraTyping"></span></p>
             </div>
             <div class="hero-image">
                 <img src="./assets/img/photo.png" alt="Poovarasan S" load="lazy"
@@ -329,6 +377,26 @@
         </div>
     </div>
 
+    <!-- github -->
+    <section class="relative overflow-hidden">
+        <!-- animation -->
+        <div class="absolute inset-0 w-svw h-full">
+            <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
+            <div class="absolute inset-0 w-svw h-full bg-rays animate-rays-asymmetric"></div>
+        </div>
+        <h2 class="text-4xl section-title mt-9">Github Profile</h2>
+        <div class="githubMaterial flex flex-col items-center space-y-8 p-4 sm:p-8 md:space-y-12 lg:p-16">
+            <img src="https://github-readme-stats.vercel.app/api?username=poovarasansivakumar2003&theme=radical&hide_border=false&include_all_commits=true&count_private=true"
+                alt="stats" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+            <img src="https://github-readme-streak-stats.herokuapp.com?user=poovarasansivakumar2003&theme=radical&hide_border=false"
+                alt="streak" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=poovarasansivakumar2003&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact"
+                alt="lang" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+            <img src="https://github-profile-trophy.vercel.app/?username=poovarasansivakumar2003&theme=radical&no-frame=false&no-bg=true&margin-w=4"
+                alt="trophy" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+        </div>
+    </div>
+
     <!-- feedback -->
     <section class="relative overflow-hidden">
         <!-- animation -->
@@ -425,11 +493,14 @@
                 <a href="https://github.com/poovarasansivakumar2003" class="social-link" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/poovarasan-s-a69128260/" class="social-link" target="_blank">
+                <a href="https://www.linkedin.com/in/poovarasansivakumar2003/" class="social-link" target="_blank">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="mailto:poovarasansivakumar2003@gmail.com" class="social-link">
                     <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://discord.gg/zw44H4sf" class="social-link">
+                    <i class="fa-brands fa-discord"></i>
                 </a>
                 <a href="https://wa.me/qr/2YT2WUPUM6L6H1" class="social-link" target="_blank">
                     <i class="fab fa-whatsapp"></i>
@@ -463,29 +534,6 @@
     <div class="top-button" onclick="scrollToTop()">
         <i class="fas fa-arrow-up"></i>
     </div>
-
-    <script src="./assets/js/index.js"></script>
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Poovarasan S",
-          "jobTitle": "Web Developer & Designer",
-          "url": "https://poovarasansivakumar2003.github.io/Portfolio/",
-          "sameAs": [
-            "https://github.com/poovarasansivakumar2003",
-            "https://www.linkedin.com/in/poovarasan-s-a69128260/",
-            "https://www.instagram.com/poovarasansivakumar2003/"
-          ],
-          "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "UVCE"
-          },
-          "worksFor": {
-            "@type": "Organization",
-            "name": "Poovarasan Portfolio"
-          }
-        }
-    </script>
 </body>
+
 </html>

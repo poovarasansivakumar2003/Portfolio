@@ -29,6 +29,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+//Hero Text
+const headTextArray = ["Hello, I'm Poovarasan"];
+const paraTextArray = [
+    "Information Science & Engineering student at UVCE, passionate about innovative solutions, Arduino projects, graphic design, and web development."
+];
+
+let headIndex = 0;
+let paraIndex = 0;
+
+function typeHead() {
+    if (headIndex < headTextArray[0].length) {
+        document.getElementById("headTyping").innerHTML += headTextArray[0].charAt(headIndex);
+        headIndex++;
+        setTimeout(typeHead, 200);
+    } else {
+        typePara();
+    }
+}
+
+function typePara() {
+    if (paraIndex < paraTextArray[0].length) {
+        document.getElementById("paraTyping").innerHTML += paraTextArray[0].charAt(paraIndex);
+        paraIndex++;
+        setTimeout(typePara, 100);
+    }
+}
+
+window.onload = () => {
+    typeHead();
+};
+
 // Feedback Form Submission
 document.getElementById('feedbackForm').addEventListener('submit', function (e) {
     e.preventDefault();
