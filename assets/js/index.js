@@ -1,22 +1,20 @@
+//Loading
 document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
     const letters = document.querySelectorAll('.loader-text span');
 
-    // Animate loader text letters with delays
     letters.forEach((letter, idx) => {
         letter.style.animationDelay = `${idx * 0.1}s`;
     });
 
-    // Fade out loader after 2 seconds
     setTimeout(() => {
         loader.style.opacity = '0';
         loader.style.display = 'none';
     }, 2000);
 });
 
-// Mobile Menu Toggle
+//Menu Toggle
 document.querySelector('.nav-links').addEventListener('click', toggleMenu);
-
 function toggleMenu() {
     document.querySelector('.nav-links').classList.toggle('active');
 }
@@ -28,6 +26,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     });
 });
+
+// Navbar and Scroll-to-Top Button
+const navbar = document.querySelector('.navbar');
+const topButton = document.querySelector('.top-button');
+let lastScroll = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScroll) {
+        navbar.style.transform = 'translateY(-100%)';
+    } else {
+        navbar.style.transform = 'translateY(0)';
+    }
+    lastScroll = currentScroll;
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    topButton.classList.toggle('show', window.scrollY > 300);
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+const sections = document.querySelectorAll("section");
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+});
+
+sections.forEach((section) => sectionObserver.observe(section));
 
 //Hero Text
 const headTextArray = ["Hello, I'm Poovarasan"];
@@ -42,7 +73,7 @@ function typeHead() {
     if (headIndex < headTextArray[0].length) {
         document.getElementById("headTyping").innerHTML += headTextArray[0].charAt(headIndex);
         headIndex++;
-        setTimeout(typeHead, 200);
+        setTimeout(typeHead, 150);
     } else {
         typePara();
     }
@@ -52,7 +83,7 @@ function typePara() {
     if (paraIndex < paraTextArray[0].length) {
         document.getElementById("paraTyping").innerHTML += paraTextArray[0].charAt(paraIndex);
         paraIndex++;
-        setTimeout(typePara, 100);
+        setTimeout(typePara, 75);
     }
 }
 
@@ -108,29 +139,3 @@ function showPaymentForm(paymentType) {
 window.onclick = (event) => {
     if (event.target === modal) modal.style.display = "none";
 };
-
-// Navbar and Scroll-to-Top Button
-const navbar = document.querySelector('.navbar');
-const topButton = document.querySelector('.top-button');
-let lastScroll = window.scrollY;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    // Navbar hide/show logic based on scroll direction
-    if (currentScroll > lastScroll) {
-        navbar.style.transform = 'translateY(-100%)';
-    } else {
-        navbar.style.transform = 'translateY(0)';
-    }
-    lastScroll = currentScroll;
-
-    // Toggle navbar scrolled class based on position
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-
-    // Show/hide top button based on scroll position
-    topButton.classList.toggle('show', window.scrollY > 300);
-});
-
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}

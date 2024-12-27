@@ -17,17 +17,23 @@
 }
 
 body {
+    margin-top: 60px; 
     background-color: var(--dark);
     color: var(--light);
     transition: var(--transition);
-    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    scroll-behavior: smooth;
 }
 
-html {
-    scroll-behavior: smooth;
+
+/* loading */
+@keyframes bounce {
+    to {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
 }
 
 .loader {
@@ -55,32 +61,7 @@ html {
     opacity: 0;
 }
 
-@keyframes bounce {
-    to {
-        transform: translateY(-20px);
-        opacity: 1;
-    }
-}
-
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        scale: 0.5;
-    }
-
-    to {
-        opacity: 1;
-        scale: 1;
-    }
-}
-
-section {
-    animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-}
-
+/* navigation */
 .navbar {
     top: 0;
     width: 100%;
@@ -181,6 +162,89 @@ section {
     .nav-links {
         width: 100%;
     }
+}
+
+/* Scroll to Top Button */
+.top-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 99;
+}
+
+.top-button:hover {
+    transform: translateY(-5px);
+}
+
+.top-button i {
+    margin: 0;
+}
+
+.top-button.show {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* section */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1.2s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fade-slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* section title */
+@keyframes slide-rotate {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) rotate(-10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+    }
+}
+
+.section-title {
+    background: linear-gradient(45deg, var(--secondary), var(--primary));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    animation: slide-rotate 1.5s ease-out forwards;
 }
 
 /* animations */
@@ -291,6 +355,7 @@ section {
     }
 }
 
+/* credential details */
 #logout {
     display: none;
 }
@@ -312,18 +377,6 @@ section {
     margin-top: 100px;
 }
 
-.section-title {
-    background: linear-gradient(45deg, var(--secondary), var(--primary));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-}
-
-.skills {
-    font-size: 20px;
-    margin: 15px;
-}
-
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -332,13 +385,6 @@ section {
     justify-content: center;
     padding: 6rem 6rem;
     overflow: hidden;
-}
-
-@media (max-width: 928px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
 }
 
 .hero-content {
@@ -352,6 +398,7 @@ section {
 
 .hero-text {
     flex: 1;
+    width: 710px;
 }
 
 .hero-text h1 {
@@ -375,6 +422,17 @@ section {
 
 .hero-image img:hover {
     transform: translateY(-10px);
+}
+
+@media (max-width: 928px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text {
+        width: auto;
+    }
 }
 
 /* Projects Section */
@@ -797,33 +855,4 @@ section {
     .footer-links a {
         font-size: 1rem;
     }
-}
-
-/* Scroll to Top Button */
-.top-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    font-size: 2rem;
-    cursor: pointer;
-    display: none;
-    /* Hidden by default */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.top-button:hover {
-    transform: translateY(-5px);
-    /* Slight lift on hover */
-}
-
-.top-button i {
-    margin: 0;
-}
-
-.top-button.show {
-    display: block;
 }
