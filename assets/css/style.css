@@ -133,7 +133,7 @@ body {
     color: var(--primary);
 }
 
-@media (max-width: 990px) {
+@media (max-width: 1115px) {
     .nav-links {
         display: none;
         flex-direction: column;
@@ -206,36 +206,42 @@ body {
 
 /* section */
 section {
+    padding: 15px;
+    margin: 10px;
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 1s ease, transform 1.2s ease;
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-section.visible {
+section.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-@keyframes fade-slide-down {
+@keyframes float {
     0% {
-        opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
     }
     100% {
-        opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* section title */
-@keyframes slide-rotate {
+@keyframes fadeInFloat {
     0% {
         opacity: 0;
-        transform: translateX(-100%) rotate(-10deg);
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(-5px);
     }
     100% {
         opacity: 1;
-        transform: translateX(0) rotate(0);
+        transform: translateY(0);
     }
 }
 
@@ -244,10 +250,14 @@ section.visible {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    animation: slide-rotate 1.5s ease-out forwards;
 }
 
-/* animations */
+.section-title.active{
+    animation: fadeInFloat 1.5s ease-in-out forwards, float 4s ease-in-out infinite;
+}
+
+
+/* dotted animations */
 @keyframes particles-asymmetric {
     0% {
         transform: translateX(-15%) translateY(5%);
@@ -377,6 +387,33 @@ section.visible {
     margin-top: 100px;
 }
 
+/* animation */
+.hero-text, .skills, .stats, .lang, .form-group, .buyMeCoffee{
+    transform: translateX(-35px);
+    visibility: hidden; 
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.hero-text.active, .skills.active, .stats.active, .lang.active, .form-group.active, .buyMeCoffee.active {
+    transform: translateX(0); 
+    visibility: visible; 
+    opacity: 1; 
+}
+
+.hero-image, .stat-item, .box-item, .streak, .trophy, .submit-btn {
+    transform: translateX(35px);
+    visibility: hidden; 
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.hero-image.active, .stat-item.active, .box-item.active, .streak.active, .trophy.active, .submit-btn.active{
+    transform: translateX(0);
+    visibility: visible; 
+    opacity: 1; 
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -398,7 +435,8 @@ section.visible {
 
 .hero-text {
     flex: 1;
-    width: 710px;
+    font-size: large;
+    width: 721px;
 }
 
 .hero-text h1 {
@@ -409,22 +447,32 @@ section.visible {
     -webkit-text-fill-color: transparent;
 }
 
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .hero-image {
     position: relative;
+    transform: scale(0.95);
+    opacity: 0;
+    animation: zoomIn 1.5s ease-out 0.9s forwards, float 5s ease-in-out infinite;
+    max-width: 350px;
+    border-radius: 15px;
+    filter: drop-shadow(5px 5px 10px #555 );
 }
 
-.hero-image img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 20px;
-    transition: var(--transition);
+.hero-image:hover {
+    transform: translateY(-10px) scale(1.05);
 }
 
-.hero-image img:hover {
-    transform: translateY(-10px);
-}
-
-@media (max-width: 928px) {
+@media (max-width: 1115px) {
     .hero-content {
         flex-direction: column;
         text-align: center;
@@ -432,6 +480,7 @@ section.visible {
     
     .hero-text {
         width: auto;
+        font-size: medium;
     }
 }
 
@@ -616,34 +665,60 @@ section.visible {
 }
 
 /* payment */
+
 /* Modal Styles */
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
     z-index: 1;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Black background with opacity */
-    overflow: auto;
-    /* Allow scrolling */
+    min-height: 100%;
+    background-color: var(--dark);
+    overflow: none;
     padding-top: 60px;
-    /* Adjust the space from the top */
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: var(--dark);
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 70%;
+    height: 100%;
     max-width: 600px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Close button styles */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--light);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #f44336;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal-subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #666;
 }
 
 /* Payment Options */
@@ -670,13 +745,18 @@ section.visible {
 
 .payment-option i {
     font-size: 2rem;
-    color: #333;
+    color: var(--light);
     margin-bottom: 10px;
 }
 
 .payment-option p {
     font-size: 1.2rem;
-    color: #333;
+    color: var(--light);
+}
+
+.payment-option:hover i,
+.payment-option:hover p {
+    color: var(--dark); 
 }
 
 /* Payment Forms */
@@ -696,7 +776,7 @@ section.visible {
 .payment-form label {
     font-size: 1rem;
     font-weight: bold;
-    color: #333;
+    color: var(--light);
     display: block;
     margin-bottom: 5px;
 }

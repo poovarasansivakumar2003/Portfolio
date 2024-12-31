@@ -48,17 +48,44 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-const sections = document.querySelectorAll("section");
+// animation
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                } else {
+                    entry.target.classList.remove("active");
+                }
+            });
+        },
+        { threshold: 0.25 } 
+    );
 
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-        }
+    const elementsToObserve = [
+        ...document.querySelectorAll("section"),
+        ...document.querySelectorAll(".section-title"),
+        ...document.querySelectorAll(".stat-item"),
+        ...document.querySelectorAll(".box-item"),
+        ...document.querySelectorAll(".form-group"),
+        document.querySelector(".hero-text"),
+        document.querySelector(".skills"),
+        document.querySelector(".hero-image"),
+        document.querySelector(".stats"),
+        document.querySelector(".lang"),
+        document.querySelector(".trophy"),
+        document.querySelector(".streak"),
+        document.querySelector(".submit-btn"),
+        document.querySelector(".buyMeCoffee")
+    ].filter(Boolean); 
+
+    elementsToObserve.forEach((element) => {
+        observer.observe(element);
     });
 });
 
-sections.forEach((section) => sectionObserver.observe(section));
+
 
 //Hero Text
 const headTextArray = ["Hello, I'm Poovarasan"];
@@ -134,6 +161,10 @@ function showModal() {
 function showPaymentForm(paymentType) {
     document.getElementById("cardPayment").style.display = (paymentType === "card") ? "block" : "none";
     document.getElementById("upiPayment").style.display = (paymentType === "upi") ? "block" : "none";
+}
+
+function closeModal() {
+    modal.style.display = "none";
 }
 
 window.onclick = (event) => {

@@ -92,7 +92,7 @@
     </div>
 
     <!-- Navigation -->
-    <section class="navbar fixed top-0 py-4 px-8 z-50">
+    <div class="navbar fixed top-0 py-4 px-8 z-50">
         <div class="nav-content">
             <div class="logo">
                 <img src="./assets/img/favicon.png" loading="lazy" alt="Logo" />
@@ -102,6 +102,7 @@
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About Me</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#github" class="nav-link">Github</a>
                 <a href="#feedback" class="nav-link">Feedback</a>
                 <a href="#contact" class="nav-link">Contact</a>
                 <a href="login.html" id="loginLink" class="nav-link">Login</a>
@@ -112,7 +113,7 @@
                 <i class="fas fa-bars"></i>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Top Button -->
     <div class="top-button" onclick="scrollToTop()">
@@ -140,17 +141,16 @@
                 <h1><span id="headTyping"></span></h1>
                 <p><span id="paraTyping"></span></p>
             </div>
-            <div class="hero-image">
-                <img src="./assets/img/photo.png" alt="Poovarasan S" load="lazy"
-                    style="filter: drop-shadow(5px 5px 10px #555 );">
+            <div>
+                <img src="./assets/img/photo.png" alt="Poovarasan S" load="lazy" class="hero-image">
             </div>
         </div>
     </section>
 
     <!-- About section -->
-    <section class="relative overflow-hidden">
+    <section class="relative overflow-hidden " id="about">
         <h2 class="text-4xl section-title">About Me</h2>
-        <div id="about" class="flex flex-col max-w-7xl m-20 rounded-xl shadow-lg p-16 gap-4 space-y-6 "
+        <div class="flex flex-col max-w-7xl m-20 rounded-xl shadow-lg p-16 gap-4 space-y-6 "
             style="background-color: #141515;  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
             <!-- animation -->
             <div class="absolute inset-0 w-svw h-full">
@@ -171,7 +171,7 @@
                     <span class="stat-label text-sm text-gray-400">Hackathons</span>
                 </div>
             </div>
-            <div class="flex justify-center flex-wrap gap-4 m-15">
+            <div class="flex justify-center flex-wrap gap-4 skills">
                 <!-- Programming Languages -->
                 <div class="text-xl m-4"><i class="fas fa-code"></i>
                     <span>C</span>
@@ -249,14 +249,14 @@
     </section>
 
     <!-- Projects Section -->
-    <div class="relative overflow-hidden">
+    <section class="relative overflow-hidden" id="projects">
         <!-- animation -->
         <div class="absolute inset-0 w-svw h-full">
             <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
             <div class="absolute inset-0 w-svw h-full bg-rays animate-rays-asymmetric"></div>
         </div>
         <h2 class="text-4xl section-title">Featured Projects</h2>
-        <div class="projects" id="projects">
+        <div class="projects">
             <div class="box-item">
                 <div class="flip-box">
                     <div class="flip-box-front">
@@ -436,10 +436,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- github -->
-    <section class="relative overflow-hidden">
+    <section class="relative overflow-hidden" id="github">
         <!-- animation -->
         <div class="absolute inset-0 w-svw h-full">
             <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
@@ -448,148 +448,149 @@
         <h2 class="text-4xl section-title mt-9">Github Profile</h2>
         <div class="githubMaterial flex flex-col items-center space-y-8 p-4 sm:p-8 md:space-y-12 lg:p-16">
             <img src="https://github-readme-stats.vercel.app/api?username=poovarasansivakumar2003&theme=radical&hide_border=false&include_all_commits=true&count_private=true"
-                alt="stats" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+                alt="stats" class="stats" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
             <img src="https://github-readme-streak-stats.herokuapp.com?user=poovarasansivakumar2003&theme=radical&hide_border=false"
-                alt="streak" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+                alt="streak" class="streak" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
             <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=poovarasansivakumar2003&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact"
-                alt="lang" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+                alt="lang" class="lang" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
             <img src="https://github-profile-trophy.vercel.app/?username=poovarasansivakumar2003&theme=radical&no-frame=false&no-bg=true&margin-w=4"
-                alt="trophy" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+                alt="trophy" class="trophy" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
         </div>
-        </div>
+    </section>
 
-        <!-- feedback -->
-        <section class="relative overflow-hidden">
-            <!-- animation -->
-            <div class="absolute inset-0 w-svw h-full">
-                <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
-                <div class="absolute inset-0 w-svw h-full bg-rays animate-rays-asymmetric"></div>
+    <!-- feedback -->
+    <section class="relative overflow-hidden" id="feedback">
+        <!-- animation -->
+        <div class="absolute inset-0 w-svw h-full">
+            <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
+            <div class="absolute inset-0 w-svw h-full bg-rays animate-rays-asymmetric"></div>
+        </div>
+        <h2 class="text-4xl section-title mt-9">Your Feedback Matters</h2>
+        <div class="feedback-section">
+            <form class="feedback-form" id="feedbackForm">
+                <div class="form-group">
+                    <label for="Feedback">Share Your Thoughts</label>
+                    <textarea class="feedback-textarea" id="Feedback" name="Feedback"
+                        placeholder="I'd love to hear your feedback..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Rate Your Experience</label>
+                    <div class="rating-group">
+                        <input type="radio" name="Rating" id="Star5" value="5">
+                        <label for="Star5">★</label>
+                        <input type="radio" name="Rating" id="Star4" value="4">
+                        <label for="Star4">★</label>
+                        <input type="radio" name="Rating" id="Star3" value="3">
+                        <label for="Star3">★</label>
+                        <input type="radio" name="Rating" id="Star2" value="2">
+                        <label for="Star2">★</label>
+                        <input type="radio" name="Rating" id="Star1" value="1">
+                        <label for="Star1">★</label>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+
+            <!-- Buy Me Coffee Button -->
+            <div class="buyMeCoffee" onclick="showModal()">☕ Buy Me a Coffee</div>
+
+            <!-- Payment Modal -->
+            <div id="paymentModal" class="modal">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal()">×</button>
+                    <h2 class="modal-title">Support Us</h2>
+                    <p class="modal-subtitle">Choose your preferred payment method:</p>
+                    <div class="payment-options">
+                        <div class="payment-option" onclick="showPaymentForm('card')">
+                            <i class="fas fa-credit-card"></i>
+                            <p>Card Payment</p>
+                        </div>
+                        <div class="payment-option" onclick="showPaymentForm('upi')">
+                            <i class="fas fa-mobile-alt"></i>
+                            <p>UPI Payment</p>
+                        </div>
+                    </div>
+                    <div id="cardPayment" class="payment-form">
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="form-group">
+                            <label>Expiry Date</label>
+                            <input type="text" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" placeholder="123">
+                        </div>
+                        <button class="pay-button">Pay ₹100</button>
+                    </div>
+                    <div id="upiPayment" class="payment-form">
+                        <img src="./assets/img/upiscanner.jpg" alt="UPI QR Code" class="upi-qr">
+                        <button class="pay-button">Pay ₹100</button>
+                    </div>
+                </div>
             </div>
-            <h2 class="text-4xl section-title mt-9">Your Feedback Matters</h2>
-            <div class="feedback-section " id="feedback">
-                <form class="feedback-form" id="feedbackForm">
-                    <div class="form-group">
-                        <label for="Feedback">Share Your Thoughts</label>
-                        <textarea class="feedback-textarea" id="Feedback" name="Feedback"
-                            placeholder="I'd love to hear your feedback..." required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Rate Your Experience</label>
-                        <div class="rating-group">
-                            <input type="radio" name="Rating" id="Star5" value="5">
-                            <label for="Star5">★</label>
-                            <input type="radio" name="Rating" id="Star4" value="4">
-                            <label for="Star4">★</label>
-                            <input type="radio" name="Rating" id="Star3" value="3">
-                            <label for="Star3">★</label>
-                            <input type="radio" name="Rating" id="Star2" value="2">
-                            <label for="Star2">★</label>
-                            <input type="radio" name="Rating" id="Star1" value="1">
-                            <label for="Star1">★</label>
-                        </div>
-                    </div>
-                    <button type="submit" class="submit-btn">Submit Feedback</button>
-                </form>
-
-
-                <!-- payment -->
-                <div class="bg-white/10 backdrop-blur-md border border-white/20 text-white py-2 px-8 rounded-lg transition duration-300 hover:shadow-glow m-10 hover:-translate-y-1"
-                    onclick="showModal()">
-                    Buy Me Coffee
-                </div>
-                <div id="paymentModal" class="modal">
-                    <div class="modal-content">
-                        <div class="payment-options">
-                            <div class="payment-option" onclick="showPaymentForm('card')">
-                                <i class="fas fa-credit-card"></i>
-                                <p>Card Payment</p>
-                            </div>
-                            <div class="payment-option" onclick="showPaymentForm('upi')">
-                                <i class="fas fa-mobile-alt"></i>
-                                <p>UPI Payment</p>
-                            </div>
-                        </div>
-                        <div id="cardPayment" class="payment-form">
-                            <div class="form-group">
-                                <label>Card Number</label>
-                                <input type="text" placeholder="1234 5678 9012 3456">
-                            </div>
-                            <div class="form-group">
-                                <label>Expiry Date</label>
-                                <input type="text" placeholder="MM/YY">
-                            </div>
-                            <div class="form-group">
-                                <label>CVV</label>
-                                <input type="text" placeholder="123">
-                            </div>
-                            <button class="pay-button">Pay ₹100</button>
-                        </div>
-                        <div id="upiPayment" class="payment-form">
-                            <img src="./assets/img/upiscanner.jpg" alt="UPI QR Code" load="lazy" class="upi-qr">
-                            <button class="pay-button">Pay ₹100</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Contact Section -->
-        <div style="background: #141515;">
-            <section class="contact" id="contact">
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <nav class="footer-links">
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#contact">Contact</a>
-                    </nav>
-                </div>
-
-                <h2 class="text-2xl section-title">Connect With Me</h2>
-
-                <div class="social-links">
-                    <a href="https://github.com/poovarasansivakumar2003" class="social-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/poovarasansivakumar2003/" class="social-link" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:poovarasansivakumar2003@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://discord.gg/zw44H4sf" class="social-link">
-                        <i class="fa-brands fa-discord"></i>
-                    </a>
-                    <a href="https://wa.me/qr/2YT2WUPUM6L6H1" class="social-link" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.instagram.com/poovarasansivakumar2003/" class="social-link" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://m.facebook.com/poovarasansivakumar2003" class="social-link" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://x.com/Poovara79282181" class="social-link" target="_blank">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@poovarasansivakumar2003" class="social-link" target="_blank">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://t.me/poovarasansivakumar2003" class="social-link" target="_blank">
-                        <i class="fab fa-telegram"></i>
-                    </a>
-                </div>
-                <div class="copyright">
-                    <p><i class="fa-solid fa-copyright"></i> 2024 Poovarasan S, All rights reserved |
-                        <a href="https://github.com/poovarasansivakumar2003/Portfolio/blob/master/LICENSE.md"
-                            target="_blank" class="license-link">license</a> |
-                    </p>
-                </div>
-            </section>
         </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <div style="background: #141515;">
+        <div class="contact" id="contact">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <nav class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+
+            <h2 class="text-2xl section-title" style="animation: none;">Connect With Me</h2>
+
+            <div class="social-links">
+                <a href="https://github.com/poovarasansivakumar2003" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/poovarasansivakumar2003/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:poovarasansivakumar2003@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://discord.gg/zw44H4sf" class="social-link">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+                <a href="https://wa.me/qr/2YT2WUPUM6L6H1" class="social-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/poovarasansivakumar2003/" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://m.facebook.com/poovarasansivakumar2003" class="social-link" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://x.com/Poovara79282181" class="social-link" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/@poovarasansivakumar2003" class="social-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://t.me/poovarasansivakumar2003" class="social-link" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                <p><i class="fa-solid fa-copyright"></i> 2024 Poovarasan S, All rights reserved |
+                    <a href="https://github.com/poovarasansivakumar2003/Portfolio/blob/master/LICENSE.md"
+                        target="_blank" class="license-link">license</a> |
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
