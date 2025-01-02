@@ -13,35 +13,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2000);
 });
 
-//Menu Toggle
-document.querySelector('.nav-links').addEventListener('click', toggleMenu);
-function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('active');
-}
+// navigation
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelectorAll(".navLinks");
+const settings = document.getElementById("settings");
+const settingsList = document.getElementById("settingsList");
+const fullScreenName = document.getElementById("fullScreenName");
 
-// Smooth Scroll for internal links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+hamburger.addEventListener("click", () => {
+    navLinks.forEach(link => {
+        if (link.classList.contains("hidden")) {
+            link.classList.remove("hidden");
+        } else {
+            link.classList.add("hidden");
+        }
     });
 });
 
-// Navbar and Scroll-to-Top Button
-const navbar = document.querySelector('.navbar');
-const topButton = document.querySelector('.top-button');
-let lastScroll = window.scrollY;
+settings.addEventListener("click", () => {
+    settingsList.classList.toggle("hidden");
+});
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > lastScroll) {
-        navbar.style.transform = 'translateY(-100%)';
-    } else {
-        navbar.style.transform = 'translateY(0)';
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+        fullScreenName.textContent = "Exit Fullscreen";
+    } else if (document.exitFullscreen) {
+        document.exitFullscreen();
+        fullScreenName.textContent = "Enter Fullscreen";
     }
-    lastScroll = currentScroll;
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-    topButton.classList.toggle('show', window.scrollY > 300);
+}
+
+function setTheme(theme) {
+    document.documentElement.className = theme === "dark" ? "dark" : theme === "light" ? "" : "system";
+}
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            if (mobileNav.classList.contains('visible')) {
+                toggleMobileMenu();
+            }
+        }
+    });
 });
 
 function scrollToTop() {
@@ -60,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         },
-        { threshold: 0.25 } 
+        { threshold: 0.25 }
     );
 
     const elementsToObserve = [
@@ -78,45 +96,39 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".streak"),
         document.querySelector(".submit-btn"),
         document.querySelector(".buyMeCoffee")
-    ].filter(Boolean); 
+    ].filter(Boolean);
 
     elementsToObserve.forEach((element) => {
         observer.observe(element);
     });
 });
 
-
-
-//Hero Text
+// Hero Text Typing Effect
 const headTextArray = ["Hello, I'm Poovarasan"];
 const paraTextArray = [
     "Information Science & Engineering student at UVCE, passionate about innovative solutions, Arduino projects, graphic design, and web development."
 ];
 
-let headIndex = 0;
-let paraIndex = 0;
+const typeEffect = (elementId, textArray, delay) => {
+    let index = 0;
+    const element = document.getElementById(elementId);
 
-function typeHead() {
-    if (headIndex < headTextArray[0].length) {
-        document.getElementById("headTyping").innerHTML += headTextArray[0].charAt(headIndex);
-        headIndex++;
-        setTimeout(typeHead, 150);
-    } else {
-        typePara();
-    }
-}
+    const type = () => {
+        if (index < textArray[0].length) {
+            element.innerHTML += textArray[0].charAt(index);
+            index++;
+            setTimeout(type, delay);
+        }
+    };
 
-function typePara() {
-    if (paraIndex < paraTextArray[0].length) {
-        document.getElementById("paraTyping").innerHTML += paraTextArray[0].charAt(paraIndex);
-        paraIndex++;
-        setTimeout(typePara, 75);
-    }
-}
+    type();
+};
 
 window.onload = () => {
-    typeHead();
+    typeEffect("headTyping", headTextArray, 150);
+    setTimeout(() => typeEffect("paraTyping", paraTextArray, 75), headTextArray[0].length * 150);
 };
+
 
 // Feedback Form Submission
 document.getElementById('feedbackForm').addEventListener('submit', function (e) {

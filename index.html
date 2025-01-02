@@ -33,11 +33,11 @@
         content="Explore Poovarasan S's portfolio, featuring web development and design projects, technical skills, and more.">
     <meta name="DC.language" content="en">
     <link rel="icon" href="./assets/img/favicon.png" type="image/png">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/tailwind.css">
-    <script defer src="./assets/js/loginauth.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./assets/js/loginauth.js"></script>
     <script defer src="./assets/js/index.js"></script>
     <script type="application/ld+json">
     {
@@ -92,28 +92,69 @@
     </div>
 
     <!-- Navigation -->
-    <div class="navbar fixed top-0 py-4 px-8 z-50">
-        <div class="nav-content">
-            <div class="logo">
-                <img src="./assets/img/favicon.png" loading="lazy" alt="Logo" />
-                <h2 class="text-2xl">Poovarasan's Portfolio</h2>
-            </div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About Me</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#github" class="nav-link">Github</a>
-                <a href="#feedback" class="nav-link">Feedback</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="login.html" id="loginLink" class="nav-link">Login</a>
-                <button id="logout"
-                    class="bg-white/10 backdrop-blur-md border border-white/20 text-white py-2 px-8 rounded-lg transition duration-300 hover:shadow-glow">Logout</button>
-            </div>
-            <div class="hamburger" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </div>
+    <nav class="bg-black p-4 z-50 fixed top-0 left-0 h-full">
+        <ul class="flex flex-col h-full justify-between items-center space-y-4">
+            <!-- Logo Section -->
+            <li class="flex items-center space-x-2">
+                <img src="./assets/img/favicon.png" alt="Logo" loading="lazy" class="w-8 h-8">
+                <span class="hidden navLinks">Poovarasan's Portfolio</span>
+            </li>
+
+            <!-- Search Bar -->
+            <li class="flex items-center space-x-2">
+                <i class="fas fa-search"></i>
+                <input type="text" class="hidden navLinks bg-gray-700 text-white p-2 rounded-md " placeholder="Search">
+            </li>
+
+            <!-- Navigation Links -->
+            <li>
+                <ul class="flex flex-col items-center space-y-4">
+                    <li><a href="#home" class="flex items-center space-x-2 hover:text-orange-400"><i
+                                class="fas fa-home"></i><span class="hidden navLinks">Home</span></a></li>
+                    <li><a href="#about" class="flex items-center space-x-2 hover:text-orange-400"><i
+                                class="fas fa-user"></i><span class="hidden navLinks">About</span></a></li>
+                    <li><a href="#projects" class="flex items-center space-x-2 hover:text-orange-400"><i
+                                class="fas fa-briefcase"></i><span class="hidden navLinks">Projects</span></a></li>
+                    <li><a href="#github" class="flex items-center space-x-2 hover:text-orange-400"><i
+                                class="fab fa-github"></i><span class="hidden navLinks">Github</span></a></li>
+                    <li><a href="#feedback" class="flex items-center space-x-2 hover:text-orange-400"><i
+                                class="fas fa-comments"></i><span class="hidden navLinks">Feedback</span></a></li>
+                    <li><a href="#contact" class="flex items-center space-x-2 hover:text-orange-400"><i
+                                class="fas fa-envelope"></i><span class="hidden navLinks">Contact</span></a></li>
+
+                    <!-- Settings -->
+                    <li>
+                        <button id="settings" class="flex items-center space-x-2 hover:text-orange-400">
+                            <i class="fas fa-cog"></i>
+                            <span class="hidden navLinks">Theme</span>
+                        </button>
+                        <div id="settingsList" class="hidden flex-col space-y-2 p-2 rounded-md ">
+                            <button onclick="toggleFullScreen()"
+                                class="flex items-center space-x-2 hover:text-orange-400"><i
+                                    class="fas fa-expand"></i><span id="fullScreenName">Enter Fullscreen</span></button>
+                            <button onclick="setTheme('dark')"
+                                class="flex items-center space-x-2 hover:text-orange-400"><i
+                                    class="fas fa-moon"></i><span>Dark Theme</span></button>
+                            <button onclick="setTheme('light')"
+                                class="flex items-center space-x-2 hover:text-orange-400"><i
+                                    class="fas fa-sun"></i><span>Light Theme</span></button>
+                            <button onclick="setTheme('system')"
+                                class="flex items-center space-x-2 hover:text-orange-400"><i
+                                    class="fas fa-desktop"></i><span>System Theme</span></button>
+                        </div>
+                    </li>
+
+                    <li><a href="login.html" id="loginLink" class="flex items-center space-x-2 hover:text-orange-400"><i
+                                class="fas fa-sign-in-alt"></i><span class="hidden navLinks">Login</span></a></li>
+                    <li><button id="logout" class="hidden flex items-center space-x-2 hover:text-orange-400"><i
+                                class="fas fa-sign-out-alt"></i><span class="hidden navLinks">Logout</span></button>
+                    </li>
+                    <li><button id="hamburger" class="flex items-center space-x-2"><i class="fas fa-bars"></i></button>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
     <!-- Top Button -->
     <div class="top-button" onclick="scrollToTop()">
@@ -131,27 +172,30 @@
 
     <!-- Hero Section -->
     <section class="hero relative" id="home">
-        <!-- animation -->
+        <!-- Animation Layers -->
         <div class="absolute inset-0 w-svw h-full">
             <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
             <div class="absolute inset-0 w-svw h-full bg-rays animate-rays-asymmetric"></div>
         </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1><span id="headTyping"></span></h1>
-                <p><span id="paraTyping"></span></p>
+        <!-- Hero Content -->
+        <div class="hero-content flex flex-col md:flex-row items-center justify-center gap-8 px-6 md:px-16 py-12">
+            <div class="hero-text text-center md:text-left space-y-4">
+                <h1 class="text-4xl md:text-5xl font-bold section-title text-transparent bg-clip-text"
+                    id="headTyping"></h1>
+                <p class="text-lg md:text-xl" id="paraTyping"></p>
             </div>
             <div>
-                <img src="./assets/img/photo.png" alt="Poovarasan S" load="lazy" class="hero-image">
+                <img src="./assets/img/photo.png" alt="Poovarasan S" loading="lazy"
+                    class="hero-image w-72 md:w-96 rounded-lg hover:scale-105 transform transition duration-300 ease-in-out">
             </div>
         </div>
     </section>
 
+
     <!-- About section -->
     <section class="relative overflow-hidden " id="about">
         <h2 class="text-4xl section-title">About Me</h2>
-        <div class="flex flex-col max-w-7xl m-20 rounded-xl shadow-lg p-16 gap-4 space-y-6 "
-            style="background-color: #141515;  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+        <div class="flex flex-col max-w-7xl m-20 rounded-xl shadow-lg p-16 gap-4 space-y-6" style="background-color: #141515;  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
             <!-- animation -->
             <div class="absolute inset-0 w-svw h-full">
                 <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
@@ -291,10 +335,12 @@
                     <div class="flip-box-back">
                         <div class="inner">
                             <h3 class="flip-box-header">Here is my</h3>
-                            <a href="https://github.com/poovarasansivakumar2003/Codefury-6.0" target="_blank"><button
-                                    class="flip-box-button">Repository link <i class="fab fa-github"></i></button></a>
-                            <a href="https://poovarasansivakumar2003.github.io/Codefury-6.0/" target="_blank"><button
-                                    class="flip-box-button">Web Link</button></a>
+                            <a href="https://github.com/poovarasansivakumar2003/Codefury-6.0" target="_blank">
+                                <button class="flip-box-button">Repository link <i class="fab fa-github"></i></button>
+                            </a>
+                            <a href="https://poovarasansivakumar2003.github.io/Codefury-6.0/" target="_blank">
+                                <button class="flip-box-button">Web Link</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -311,12 +357,12 @@
                     <div class="flip-box-back">
                         <div class="inner">
                             <h3 class="flip-box-header">Here is my</h3>
-                            <a href="https://github.com/poovarasansivakumar2003/BitNBuild-SPRint-team"
-                                target="_blank"><button class="flip-box-button">Repository
-                                    link <i class="fab fa-github"></i></button></a>
-                            <a href="https://poovarasansivakumar2003.github.io/BitNBuild-SPRint-team/"
-                                target="_blank"><button class="flip-box-button">Web
-                                    Link</button></a>
+                            <a href="https://github.com/poovarasansivakumar2003/BitNBuild-SPRint-team" target="_blank">
+                                <button class="flip-box-button">Repository link <i class="fab fa-github"></i></button>
+                            </a>
+                            <a href="https://poovarasansivakumar2003.github.io/BitNBuild-SPRint-team/" target="_blank">
+                                <button class="flip-box-button">Web Link</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -327,18 +373,18 @@
                         <div class="inner  ">
                             <h3 class="flip-box-header">Codefury 7.0</h3>
                             <p>A national level 24-hour hackathon conducted by IEEE UVCE</p>
-                            <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy" ;>
+                            <img src="./assets/img/cta-arrow.png" alt="" class="flip-box-img" loading="lazy">
                         </div>
                     </div>
                     <div class="flip-box-back">
                         <div class="inner  ">
                             <h3 class="flip-box-header">Here is my</h3>
-                            <a href="https://github.com/poovarasansivakumar2003/Codefury-7.0" target="_blank"><button
-                                    class="flip-box-button">Repository
-                                    link <i class="fab fa-github"></i></button></a>
-                            <a href="https://codefury-7-0-ravitejas-projects-7097fbe7.vercel.app/"
-                                target="_blank"><button class="flip-box-button">Web
-                                    Link</button></a>
+                            <a href="https://github.com/poovarasansivakumar2003/Codefury-7.0" target="_blank">
+                                <button class="flip-box-button">Repository link <i class="fab fa-github"></i></button>
+                            </a>
+                            <a href="https://codefury-7-0-ravitejas-projects-7097fbe7.vercel.app/" target="_blank">
+                                <button class="flip-box-button">Web Link</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -355,12 +401,12 @@
                     <div class="flip-box-back">
                         <div class="inner  ">
                             <h3 class="flip-box-header">Here is my</h3>
-                            <a href="https://github.com/poovarasansivakumar2003/completeRepo" target="_blank"><button
-                                    class="flip-box-button">Repository link
-                                    <i class="fab fa-github"></i></button></a>
-                            <a href="https://completerepo.onrender.com/home" target="_blank"><button
-                                    class="flip-box-button">Web
-                                    Link</button></a>
+                            <a href="https://github.com/poovarasansivakumar2003/completeRepo" target="_blank">
+                                <button class="flip-box-button">Repository link<i class="fab fa-github"></i></button>
+                            </a>
+                            <a href="https://completerepo.onrender.com/home" target="_blank">
+                                <button class="flip-box-button">Web Link</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -377,12 +423,12 @@
                     <div class="flip-box-back">
                         <div class="inner  ">
                             <h3 class="flip-box-header">Here is my</h3>
-                            <a href="https://github.com/poovarasansivakumar2003/webdesign" target="_blank"><button
-                                    class="flip-box-button">Repository
-                                    link <i class="fab fa-github"></i></button></a>
-                            <a href="https://poovarasansivakumar2003.github.io/webdesign/" target="_blank"><button
-                                    class="flip-box-button">Web
-                                    Link</button></a>
+                            <a href="https://github.com/poovarasansivakumar2003/webdesign" target="_blank">
+                                <button class="flip-box-button">Repository link <i class="fab fa-github"></i></button>
+                            </a>
+                            <a href="https://poovarasansivakumar2003.github.io/webdesign/" target="_blank">
+                                <button class="flip-box-button">Web Link</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -401,12 +447,12 @@
                     <div class="flip-box-back">
                         <div class="inner  ">
                             <h3 class="flip-box-header">Here is my</h3>
-                            <a href="https://github.com/poovarasansivakumar2003/Marvel_Batch_4_works"
-                                target="_blank"><button class="flip-box-button">Repository
-                                    link <i class="fab fa-github"></i></button></a>
-                            <a href="https://poovarasansivakumar2003.github.io/Marvel_Batch_4_works/"
-                                target="_blank"><button class="flip-box-button">Web
-                                    Link</button></a>
+                            <a href="https://github.com/poovarasansivakumar2003/Marvel_Batch_4_works" target="_blank">
+                                <button class="flip-box-button">Repository link <i
+                                        class="fab fa-github"></i></button></a>
+                            <a href="https://poovarasansivakumar2003.github.io/Marvel_Batch_4_works/" target="_blank">
+                                <button class="flip-box-button">Web Link</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -425,12 +471,12 @@
                     <div class="flip-box-back">
                         <div class="inner  ">
                             <h3 class="flip-box-header">Here is my</h3>
-                            <a href="https://github.com/poovarasansivakumar2003/securehackthon" target="_blank"><button
-                                    class="flip-box-button">Repository
-                                    link <i class="fab fa-github"></i></button></a>
-                            <a href="https://securathon.onrender.com/" target="_blank"><button
-                                    class="flip-box-button">Web
-                                    Link</button></a>
+                            <a href="https://github.com/poovarasansivakumar2003/securehackthon" target="_blank">
+                                <button class="flip-box-button">Repository link <i class="fab fa-github"></i></button>
+                            </a>
+                            <a href="https://securathon.onrender.com/" target="_blank">
+                                <button class="flip-box-button">Web Link</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -493,7 +539,7 @@
             </form>
 
             <!-- Buy Me Coffee Button -->
-            <div class="buyMeCoffee" onclick="showModal()">☕ Buy Me a Coffee</div>
+            <div class="buyMeCoffee" onclick="showModal(), goFullScreen()">☕ Buy Me a Coffee</div>
 
             <!-- Payment Modal -->
             <div id="paymentModal" class="modal">
@@ -552,34 +598,45 @@
             <h2 class="text-2xl section-title" style="animation: none;">Connect With Me</h2>
 
             <div class="social-links">
-                <a href="https://github.com/poovarasansivakumar2003" class="social-link" target="_blank">
+                <a href="https://github.com/poovarasansivakumar2003" class="social-link" target="_blank"
+                    title="Visit my github profile">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/poovarasansivakumar2003/" class="social-link" target="_blank">
+                <a href="https://www.linkedin.com/in/poovarasansivakumar2003/" class="social-link" target="_blank"
+                    title="Visit my linkedin profile">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="mailto:poovarasansivakumar2003@gmail.com" class="social-link">
+                <a href="mailto:poovarasansivakumar2003@gmail.com" class="social-link" title="Visit my mail">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://discord.gg/zw44H4sf" class="social-link">
+                <a href="https://discord.gg/zw44H4sf" class="social-link" title="Visit my discord profile">
                     <i class="fa-brands fa-discord"></i>
                 </a>
-                <a href="https://wa.me/qr/2YT2WUPUM6L6H1" class="social-link" target="_blank">
+                <a href="https://wa.me/qr/2YT2WUPUM6L6H1" class="social-link" target="_blank" title="Visit my whatsapp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://www.instagram.com/poovarasansivakumar2003/" class="social-link" target="_blank">
+                <a href="https://www.instagram.com/poovarasansivakumar2003/" class="social-link" target="_blank"
+                    title="Visit my instagram profile">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://m.facebook.com/poovarasansivakumar2003" class="social-link" target="_blank">
+                <a href="https://m.facebook.com/poovarasansivakumar2003" class="social-link" target="_blank"
+                    title="Visit my facebook profile">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="https://x.com/Poovara79282181" class="social-link" target="_blank">
+                <a href="https://x.com/Poovara79282181" class="social-link" target="_blank"
+                    title="Visit my twitter profile">
                     <i class="fab fa-x-twitter"></i>
                 </a>
-                <a href="https://www.youtube.com/@poovarasansivakumar2003" class="social-link" target="_blank">
+                <a href="https://www.youtube.com/@poovarasansivakumar2003" class="social-link" target="_blank"
+                    title="Visit my youtube channel">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="https://t.me/poovarasansivakumar2003" class="social-link" target="_blank">
+                <a href="https://leetcode.com/u/poovarasansivakumar2003" class="social-link" target="_blank"
+                    title="Visit my LeetCode profile">
+                    <img src="./assets/img/leetcode.png" alt="leetcode" loading="eager" class="leetcode" />
+                </a>
+                <a href="https://t.me/poovarasansivakumar2003" class="social-link" target="_blank"
+                    title="Visit my telegram profile">
                     <i class="fab fa-telegram"></i>
                 </a>
             </div>
