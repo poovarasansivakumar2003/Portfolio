@@ -13,6 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2000);
 });
 
+// top button
+document.addEventListener("DOMContentLoaded", () => {
+    const topButton = document.createElement("button");
+    topButton.innerHTML = "&#8593;"; 
+    topButton.className = "scroll-to-top hidden fixed bottom-6 right-6 bg-orange-500 text-white font-bold px-4 py-2 rounded-full shadow-lg transition-opacity duration-300 ease-in-out";
+    document.body.appendChild(topButton);
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            topButton.classList.remove("hidden");
+            topButton.classList.add("visible");
+        } else {
+            topButton.classList.remove("visible");
+            topButton.classList.add("hidden");
+        }
+    });
+
+    topButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+});
+
 // navigation
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.querySelectorAll(".navLinks");
@@ -45,7 +70,12 @@ function toggleFullScreen() {
 }
 
 function setTheme(theme) {
-    document.documentElement.className = theme === "dark" ? "dark" : theme === "light" ? "" : "system";
+    if (theme === "system") {
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.className = prefersDark ? "dark" : "";
+    } else {
+        document.documentElement.className = theme === "dark" ? "dark" : "";
+    }
 }
 
 // Smooth scroll for navigation links
@@ -62,10 +92,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
 // animation
 document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(
@@ -78,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         },
-        { threshold: 0.25 }
+        { threshold: 0.1 }
     );
 
     const elementsToObserve = [
@@ -88,8 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ...document.querySelectorAll(".box-item"),
         ...document.querySelectorAll(".form-group"),
         document.querySelector(".hero-text"),
-        document.querySelector(".skills"),
         document.querySelector(".hero-image"),
+        document.querySelector(".skills"),
         document.querySelector(".stats"),
         document.querySelector(".lang"),
         document.querySelector(".trophy"),
@@ -105,19 +131,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Hero Text Typing Effect
 const headTextArray = ["Hello, I'm Poovarasan"];
-const paraTextArray = [
-    "Information Science & Engineering student at UVCE, passionate about innovative solutions, Arduino projects, graphic design, and web development."
-];
 
 const typeEffect = (elementId, textArray, delay) => {
     let index = 0;
+    let textIndex = 0;
     const element = document.getElementById(elementId);
 
     const type = () => {
-        if (index < textArray[0].length) {
-            element.innerHTML += textArray[0].charAt(index);
+        if (index < textArray[textIndex].length) {
+            element.textContent += textArray[textIndex].charAt(index);
             index++;
-            setTimeout(type, delay);
+            setTimeout(type, delay); 
+        } else {
+            textIndex++;
+            if (textIndex < textArray.length) {
+                setTimeout(() => {
+                    element.textContent = "";
+                    index = 0;
+                    type();
+                }, 500);
+            }
         }
     };
 
@@ -125,8 +158,7 @@ const typeEffect = (elementId, textArray, delay) => {
 };
 
 window.onload = () => {
-    typeEffect("headTyping", headTextArray, 150);
-    setTimeout(() => typeEffect("paraTyping", paraTextArray, 75), headTextArray[0].length * 150);
+    typeEffect("headTyping", headTextArray, 200);
 };
 
 

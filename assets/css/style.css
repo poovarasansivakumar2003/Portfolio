@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-:root {
-    --primary: #f7b733;
-    --secondary: #fc4a1a;
-    --dark: #191a1a;
-    --light: #f5f5f5;
-    --transition: all 0.6s ease;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -16,11 +8,30 @@
     scroll-behavior: smooth;
 }
 
+:root {
+    --primary: #f7b733;
+    --secondary: #fc4a1a;
+    --bg-dark: #ffffff;
+    --text-color: #191a1a;
+    --light: #f5f5f5;
+    --transition: all 0.6s ease;
+}
+
+.dark {
+    --primary: #f7b733;
+    --secondary: #fc4a1a;
+    --bg-color:  #191a1a;
+    --text-color: #ffffff;
+    --light: #f5f5f5;
+    --transition: all 0.6s ease;
+}
+
 body {
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     transition: var(--transition);
     scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* loading */
@@ -62,34 +73,6 @@ nav{
     min-width: 60px;
 }
 
-/* Scroll to Top Button */
-.top-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    font-size: 2rem;
-    cursor: pointer;
-    display: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    z-index: 99;
-}
-
-.top-button:hover {
-    transform: translateY(-5px);
-}
-
-.top-button i {
-    margin: 0;
-}
-
-.top-button.show {
-    display: block;
-}
-
 @keyframes appear {
     from {
         opacity: 0;
@@ -100,20 +83,6 @@ nav{
         opacity: 1;
         scale: 1;
     }
-}
-
-/* section */
-section {
-    padding: 15px;
-    margin: 10px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-section.active {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 @keyframes float {
@@ -146,18 +115,6 @@ section.active {
         transform: translateY(0);
     }
 }
-
-.section-title {
-    background: linear-gradient(45deg, var(--secondary), var(--primary));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-}
-
-.section-title.active {
-    animation: fadeInFloat 1.5s ease-in-out forwards, float 4s ease-in-out infinite;
-}
-
 
 /* dotted animations */
 @keyframes particles-asymmetric {
@@ -289,7 +246,31 @@ section.active {
     margin-top: 100px;
 }
 
-/* animation */
+/* scroll animation */
+section {
+    padding: 15px;
+    margin: 10px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    background: linear-gradient(45deg, var(--secondary), var(--primary));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.section-title.active {
+    animation: fadeInFloat 1.5s ease-in-out forwards, float 4s ease-in-out infinite;
+}
+
 .hero-text,
 .skills,
 .stats,
@@ -337,28 +318,29 @@ section.active {
 }
 
 /* Hero Section */
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 1440px;
+    min-height: 100vh;
+}
+
 .hero-text {
-    width: 721px;
+    flex: 1;
+    max-width: 600px;
 }
 
-.hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--secondary), var(--primary));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-@media (max-width: 1115px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text {
-        width: auto;
-        font-size: medium;
-    }
+.hero-image {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
 /* Projects Section */
@@ -447,117 +429,6 @@ section.active {
     margin-top: 15px;
     padding: 10px 8px;
     text-transform: uppercase;
-}
-
-/* feedback */
-.feedback-section {
-    padding: 4rem 2rem;
-    width: 60%;
-    margin: auto;
-}
-
-.feedback-form {
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
-}
-
-.feedback-form:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.feedback-textarea {
-    width: 100%;
-    min-height: 120px;
-    padding: 1rem;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    resize: vertical;
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--light);
-    transition: var(--transition);
-}
-
-.feedback-textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(247, 183, 51, 0.2);
-}
-
-.rating-group {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    gap: 0.5rem;
-    margin: 1rem 0;
-}
-
-.rating-group input {
-    display: none;
-}
-
-.rating-group label {
-    font-size: 2rem;
-    color: #ddd;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.rating-group label:hover,
-.rating-group label:hover~label,
-.rating-group input:checked~label {
-    color: var(--primary);
-    transform: scale(1.2);
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 1rem;
-    border: none;
-    border-radius: 10px;
-    background: linear-gradient(45deg, var(--secondary), var(--primary));
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(252, 74, 26, 0.3);
-}
-
-/* payment */
-.buyMeCoffee {
-    padding: 1rem 5rem;
-    margin: 30px;
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-    color: #fff;
-    transition: all 0.2s ease;
-    background: linear-gradient(15deg, #422215, #5a3507);
-    box-shadow: 0 0 0px 10px #422215a8;
-}
-
-.buyMeCoffee:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 10px 12px #422215a8;
 }
 
 /* Modal Styles */
