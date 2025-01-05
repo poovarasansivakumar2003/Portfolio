@@ -73,10 +73,22 @@ function setTheme(theme) {
     if (theme === "system") {
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         document.documentElement.className = prefersDark ? "dark" : "";
+        localStorage.removeItem('theme');
     } else {
         document.documentElement.className = theme === "dark" ? "dark" : "";
+        localStorage.setItem('theme', theme); 
     }
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme("system");
+    }
+});
+
 
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
