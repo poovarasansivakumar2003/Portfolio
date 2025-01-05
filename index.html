@@ -92,7 +92,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-black p-4 z-50 fixed top-0 left-0 h-full">
+    <nav class="p-4 z-50 fixed top-0 left-0 h-full">
         <ul class="flex flex-col h-full justify-between items-center space-y-4">
             <!-- Logo Section -->
             <li class="flex items-center space-x-2">
@@ -103,7 +103,7 @@
             <!-- Search Bar -->
             <li class="flex items-center space-x-2">
                 <i class="fas fa-search"></i>
-                <input type="text" class="hidden navLinks bg-gray-700 text-white p-2 rounded-md " placeholder="Search">
+                <input type="text" class="hidden navLinks p-2 rounded-md search" placeholder="Search">
             </li>
 
             <!-- Navigation Links -->
@@ -188,7 +188,7 @@
     <!-- About section -->
     <section class="ml-[30px] md:ml-[30px] mb-20" id="about">
         <h2 class="text-4xl font-bold ml-[30px] md:ml-[30px] mb-[35px] section-title">About Me</h2>
-        <div class="flex flex-col ml-[30px] p-10 md:p-20 rounded-xl shadow-lg gap-4 space-y-6"  style="background-color: #141515;  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+        <div class="flex flex-col ml-[30px] p-10 md:p-20 rounded-xl shadow-lg gap-4 space-y-6 aboutBox">
             <!-- animation -->
             <div class="absolute inset-0 w-svw h-full">
                 <div class="absolute inset-0 w-svw h-full bg-particles animate-particles-asymmetric"></div>
@@ -279,7 +279,7 @@
             <div class="text-center">
                 <a href="https://drive.google.com/file/d/1IXhxXrapzXoyBwAMmrfVTO-4GeNRK-NZ/view?usp=drive_link"
                     target="_blank"
-                    class="bg-white/10 backdrop-blur-md border border-white/20 text-white py-2 px-8 rounded-lg transition duration-300 hover:shadow-glow">View
+                    class="resumeBtn bg-black/10 dark:bg-white/10 backdrop-blur-md border border-white/20 py-2 px-8 rounded-lg transition duration-300 hover:shadow-glow">View
                     Resume</a>
             </div>
         </div>
@@ -506,11 +506,11 @@
         </div>
         <h2 class="text-4xl font-bold ml-[30px] md:ml-[30px] mb-[35px] section-title">Your Feedback Matters</h2>
         <div class="feedback-section w-auto ml-[30px] p-5 md:py-16 px-8 md:w-3/5 md:mx-auto">
-            <form class="feedback-form bg-black/20 backdrop-blur-md p-8 rounded-2xl shadow-lg transition-transform hover:translate-y-[-5px] hover:shadow-2xl" id="feedbackForm">
+            <form class="feedback-form backdrop-blur-md p-8 rounded-2xl shadow-lg transition-transform hover:translate-y-[-5px] hover:shadow-2xl" id="feedbackForm">
                 <div class="form-group mb-6">
                     <label for="Feedback" class="block mb-2 font-medium">Share Your Thoughts</label>
                     <textarea id="Feedback" name="Feedback" placeholder="I'd love to hear your feedback..."
-                        required class="feedback-textarea w-full overflow-hidden min-h-[120px] p-4 border-2 border-transparent rounded-lg resize-vertical bg-white/10 text-yellow-500 focus:outline-none focus:border-primary focus:ring-4 focus:ring-yellow-700 transition-all"></textarea>
+                        required class="feedback-textarea w-full overflow-hidden min-h-[120px] p-4 border-2 border-transparent rounded-lg resize-vertical text-yellow-500 focus:outline-none focus:border-primary focus:ring-4 focus:ring-yellow-700 transition-all "></textarea>
                 </div>
         
                 <div class="form-group mb-6">
@@ -528,7 +528,7 @@
                         <label for="Star1" class="text-2xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
                     </div>
                 </div>
-                <button type="submit" class="submit-btn w-full py-4 rounded-lg bg-gradient-to-r from-secondary to-primary text-white font-medium transition-transform hover:translate-y-[-2px] hover:shadow-lg">
+                <button type="submit" class="submit-btn w-full py-4 rounded-lg bg-gradient-to-r from-secondary to-primary font-medium transition-transform hover:translate-y-[-2px] hover:shadow-lg">
                     Submit Feedback
                 </button>
             </form>

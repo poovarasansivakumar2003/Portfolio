@@ -11,7 +11,7 @@
 :root {
     --primary: #f7b733;
     --secondary: #fc4a1a;
-    --bg-dark: #ffffff;
+    --bg-color: #ffffff;
     --text-color: #191a1a;
     --light: #f5f5f5;
     --transition: all 0.6s ease;
@@ -22,7 +22,7 @@
     --secondary: #fc4a1a;
     --bg-color:  #191a1a;
     --text-color: #ffffff;
-    --light: #f5f5f5;
+    --light: #141515;
     --transition: all 0.6s ease;
 }
 
@@ -30,6 +30,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: var(--transition);
+    width: fit-content;
     scroll-behavior: smooth;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -65,12 +66,6 @@ body {
     display: inline-block;
     animation: bounce 0.5s ease infinite alternate;
     opacity: 0;
-}
-
-/* navigation */
-nav{
-    width: fit-content;
-    min-width: 60px;
 }
 
 @keyframes appear {
@@ -224,6 +219,19 @@ nav{
     }
 }
 
+/* navigation */
+nav{
+    background-color: var(--light);
+    color: var(--text-color);
+    width: fit-content;
+    min-width: 60px;
+}
+
+.search{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
 /* credential details */
 #logout {
     display: none;
@@ -343,6 +351,15 @@ section.active{
     transition: transform 0.3s ease;
 }
 
+.aboutBox{
+    background-color: var(--light);  
+    box-shadow: 0 10px 30px var(--light);
+}
+
+.resumeBtn{
+    color: var(--text-color);
+}
+
 /* Projects Section */
 .projects {
     display: grid;
@@ -366,7 +383,7 @@ section.active{
     transform-style: preserve-3d;
     transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px var(--light);
 }
 
 .flip-box:hover {
@@ -387,9 +404,9 @@ section.active{
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #141515;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    color: #fff;
+    background-color: var(--light);
+    box-shadow: 0 10px 30px var(--light);
+    color: var(--text-color);
 }
 
 .flip-box-back {
@@ -420,15 +437,27 @@ section.active{
 
 .flip-box-button {
     background: none;
-    border: 2px solid #fff;
+    border: 2px solid var(--text-color);
     border-radius: 2px;
-    color: #fff;
+    color: var(--text-color);
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
     margin-top: 15px;
     padding: 10px 8px;
     text-transform: uppercase;
+}
+
+.feedback-form{
+    background-color: var(--light);
+}
+
+.feedback-textarea{
+    background-color: var(--bg-color);
+}
+
+.submit-btn{
+    color: var(--text-color);
 }
 
 /* Modal Styles */
