@@ -92,7 +92,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="p-4 z-50 fixed top-0 left-0 h-full">
+    <nav class="p-4 z-50 fixed top-0 left-0 w-fit h-full">
         <ul class="flex flex-col h-full justify-between items-center space-y-4">
             <!-- Logo Section -->
             <li class="flex items-center space-x-2">
@@ -102,8 +102,10 @@
 
             <!-- Search Bar -->
             <li class="flex items-center space-x-2 hover:text-orange-400 cursor-pointer">
-                <i class="fas fa-search"></i>
-                <input type="text" class="hidden navLinks p-2 rounded-md focus:outline-none focus:ring-1 focus:ring-yellow-400 search" placeholder="Search">
+                <i class="fas fa-search searchBtn"></i>
+                <input type="text"
+                    class="hidden navLinks p-2 rounded-md focus:outline-none focus:ring-1 focus:ring-yellow-400 search"
+                    placeholder="Search">
             </li>
 
             <!-- Navigation Links -->
@@ -157,35 +159,36 @@
     </nav>
 
     <!-- userDetails-->
-    <section class="text-center flex gap-4" id="userDetails">
-        <p class="text-4xl section-title">Welcome, <span id="loggedUserFName">User</span><span
+    <section class="text-center ml-[64px] md:ml-[64px] gap-4" id="userDetails">
+        <p class="text-4xl font-bold section-title">Welcome, <span id="loggedUserFName">User</span><span
                 id="loggedUserLName">Name</span></p>
-        <p class="text-2xl">Email: <span id="loggedUserEmail">email@example.com</span></p>
+        <p class="text-lg md:text-xl">Email: <span id="loggedUserEmail">email@example.com</span></p>
         <p>Go below for more info.. <br></p>
         <i class="fas fa-arrow-down"> </i>
     </section>
 
     <!-- Hero Section -->
-    <section class="hero ml-[60px] md:ml-[60px]" id="home">
+    <section class="hero ml-[64px] md:ml-[64px]" id="home">
         <!-- Hero Content -->
         <div class="hero-content flex flex-col md:flex-row items-center justify-center gap-8 px-4 md:px-16 py-10">
             <div class="hero-text text-center md:text-left">
-                <h1 class="text-4xl text-center px-10 md:text-5xl mb-[10px] md:text-left font-bold section-title text-transparent bg-clip-text"
+                <h1 class="text-4xl text-center px-10 md:text-5xl mb-[10px] md:text-left font-bold md:text-left section-title text-transparent bg-clip-text"
                     id="headTyping"></h1>
                 <p class="text-lg px-10 md:text-xl">Information Science & Engineering student at UVCE, passionate about
                     innovative solutions, Arduino projects, graphic design, and web development.</p>
             </div>
             <div>
                 <img src="./assets/img/photo.png" alt="Poovarasan S" loading="lazy"
-                    class="hero-image w-76 md:w-96 rounded-lg hover:scale-105 transform transition duration-300 ease-in-out">
+                    class="hero-image rounded-lg hover:scale-105">
             </div>
         </div>
     </section>
 
     <!-- About section -->
-    <section class="ml-[60px] md:ml-[60px] p-10 mb-20" id="about">
-        <h2 class="text-4xl font-bold ml-[30px] md:ml-[30px] mb-[35px] section-title">About Me</h2>
-        <div class="flex flex-col p-10 md:p-20 rounded-xl shadow-lg gap-4 space-y-6 align-center aboutBox ml-[35px] md:ml-[35px]">
+    <section class="ml-[64px] md:ml-[64px] p-10 mb-20" id="about">
+        <h2 class="text-4xl font-bold mb-[35px] section-title">About Me</h2>
+        <div
+            class="flex flex-col p-10 md:p-20 rounded-xl shadow-lg gap-4 space-y-6 shadow-lg transition-transform hover:translate-y-[-5px] hover:shadow-2xl aboutBox">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
                 <div class="stat-item">
                     <span class="stat-number text-3xl font-bold">2+</span>
@@ -270,15 +273,16 @@
             </div>
             <div class="text-center">
                 <a href="https://drive.google.com/file/d/1IXhxXrapzXoyBwAMmrfVTO-4GeNRK-NZ/view?usp=drive_link"
-                    target="_blank" class="resumeBtn backdrop-blur-md border border-white/20 py-2 px-8 rounded-lg transition duration-300 hover:shadow-glow">View
+                    target="_blank"
+                    class="resumeBtn backdrop-blur-md border py-2 px-8 rounded-lg hover:translate-y-[-2px]">View
                     Resume</a>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="ml-[60px] md:ml-[60px]" id="projects">
-        <h2 class="text-4xl font-bold ml-[30px] md:ml-[30px] mb-[35px] section-title">Featured Projects</h2>
+    <section class="ml-[64px] md:ml-[64px] mb-20" id="projects">
+        <h2 class="text-4xl font-bold mb-[35px] section-title">Featured Projects</h2>
         <div class="projects">
             <div class="box-item">
                 <div class="flip-box">
@@ -463,26 +467,30 @@
         </div>
     </section>
 
-    <!-- github -->
-    <section class="ml-[30px] md:ml-[30px]" id="github">
-        <h2 class="text-4xl font-bold ml-[30px] md:ml-[30px] mb-[35px] section-title">Github Profile</h2>
-        <div
-            class="githubMaterial flex flex-col items-center space-y-8 ml-[30px] md:ml-[30px] p-4 sm:p-8 md:space-y-12 lg:p-16">
+    <!-- GitHub -->
+    <section class="ml-[64px] md:ml-[64px] mb-20" id="github">
+        <h2 class="text-4xl font-bold mb-[35px] section-title">Github Profile</h2>
+        <div class="githubMaterial grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-4 sm:p-8 md:p-12 lg:p-16">
             <img src="https://github-readme-stats.vercel.app/api?username=poovarasansivakumar2003&theme=radical&hide_border=false&include_all_commits=true&count_private=true"
-                alt="stats" class="stats" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+                alt="stats" class="stats w-full h-auto my-auto max-w-md" loading="lazy" />
             <img src="https://github-readme-streak-stats.herokuapp.com?user=poovarasansivakumar2003&theme=radical&hide_border=false"
-                alt="streak" class="streak" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+                alt="streak" class="streak w-full h-auto my-auto max-w-md" loading="lazy" />
             <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=poovarasansivakumar2003&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact"
-                alt="lang" class="lang" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+                alt="lang" class="lang w-full h-auto my-auto max-w-md" loading="lazy" />
             <img src="https://github-profile-trophy.vercel.app/?username=poovarasansivakumar2003&theme=radical&no-frame=false&no-bg=true&margin-w=4"
-                alt="trophy" class="trophy" loading="lazy" class="w-full max-w-md md:max-w-lg lg:max-w-xl" />
+                alt="trophy" class="trophy w-full h-auto my-auto max-w-md" loading="lazy" />
+            <img src="https://ghchart.rshah.org/poovarasansivakumar2003" alt="GitHub Contributions"
+                class="gitContribution w-full h-auto my-auto max-w-md" loading="lazy" />
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=poovarasansivakumar2003&repo=github-readme-stats"
+                alt="GitHub Stats" class="contributions w-full h-auto my-auto max-w-md md:max-w-lg lg:max-w-xl"
+                loading="lazy" />
         </div>
     </section>
 
     <!-- feedback -->
-    <section class="ml-[30px] md:ml-[30px]" id="feedback">
-        <h2 class="text-4xl font-bold ml-[30px] md:ml-[30px] mb-[35px] section-title">Your Feedback Matters</h2>
-        <div class="feedback-section w-auto ml-[30px] p-5 md:py-16 px-8 md:w-3/5 md:mx-auto">
+    <section class="ml-[64px] md:ml-[64px] mb-20" id="feedback">
+        <h2 class="text-4xl font-bold mb-[35px] section-title">Your Feedback Matters</h2>
+        <div class="feedback-section mx-auto w-auto p-5 md:py-10 px-8 md:w-3/5 md:mx-auto">
             <form
                 class="feedback-form backdrop-blur-md p-8 rounded-2xl shadow-lg transition-transform hover:translate-y-[-5px] hover:shadow-2xl"
                 id="feedbackForm">
@@ -494,35 +502,37 @@
 
                 <div class="form-group mb-6">
                     <label class="block mb-2 font-medium">Rate Your Experience</label>
-                    <div class="rating-group flex flex-row-reverse justify-center gap-2 my-4">
+                    <div class="rating-group flex flex-row-reverse justify-center gap-4 my-4">
                         <input type="radio" name="Rating" id="Star5" value="5" class="hidden">
                         <label for="Star5"
-                            class="text-2xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
+                            class="text-4xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
                         <input type="radio" name="Rating" id="Star4" value="4" class="hidden">
                         <label for="Star4"
-                            class="text-2xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
+                            class="text-4xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
                         <input type="radio" name="Rating" id="Star3" value="3" class="hidden">
                         <label for="Star3"
-                            class="text-2xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
+                            class="text-4xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
                         <input type="radio" name="Rating" id="Star2" value="2" class="hidden">
                         <label for="Star2"
-                            class="text-2xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
+                            class="text-4xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
                         <input type="radio" name="Rating" id="Star1" value="1" class="hidden">
                         <label for="Star1"
-                            class="text-2xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
+                            class="text-4xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
                     </div>
                 </div>
                 <button type="submit"
-                    class="submit-btn w-full py-4 rounded-lg bg-gradient-to-r from-secondary to-primary font-medium transition-transform hover:translate-y-[-2px] hover:shadow-lg">
+                    class="submit-btn backdrop-blur-md border py-2 px-8 mt-6 rounded-lg hover:translate-y-[-2px]">
                     Submit Feedback
                 </button>
             </form>
 
-            <!-- Buy Me Coffee Button -->
-            <div
-                class="buyMeCoffee py-4 px-20 mt-8 text-xl font-semibold text-white bg-gradient-to-tr from-[#422215] to-[#5a3507] rounded-lg shadow-[0px_0px_10px_10px_#422215a8] hover:scale-105 hover:shadow-[0px_0px_12px_12px_#422215a8] transition-all cursor-pointer">
-                ☕ Buy Me a Coffee
-            </div>
+
+        </div>
+
+        <!-- Buy Me Coffee Button -->
+        <div class="buyMeCoffee mt-8 backdrop-blur-md border py-2 px-8 mt-6 rounded-lg hover:translate-y-[-2px] "
+            onclick="showModal()">
+            ☕ Buy Me a Coffee
         </div>
 
         <!-- Payment Modal -->
@@ -566,69 +576,67 @@
 
 
     <!-- Contact Section -->
-    <div class="ml-[30px] md:ml-[30px]" style="background: #141515; ">
-        <div class="contact" id="contact">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <nav class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-            </div>
+    <div class="ml-[30px] md:ml-[30px] contact" id="contact">
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <nav class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
 
-            <h2 class="text-2xl font-bold section-title" style="animation: none;">Connect With Me</h2>
+        <h2 class="text-2xl font-bold section-title" style="animation: none;">Connect With Me</h2>
 
-            <div class="social-links">
-                <a href="https://github.com/poovarasansivakumar2003" class="social-link" target="_blank"
-                    title="Visit my github profile">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/poovarasansivakumar2003/" class="social-link" target="_blank"
-                    title="Visit my linkedin profile">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:poovarasansivakumar2003@gmail.com" class="social-link" title="Visit my mail">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://discord.gg/zw44H4sf" class="social-link" title="Visit my discord profile">
-                    <i class="fa-brands fa-discord"></i>
-                </a>
-                <a href="https://wa.me/qr/2YT2WUPUM6L6H1" class="social-link" target="_blank" title="Visit my whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.instagram.com/poovarasansivakumar2003/" class="social-link" target="_blank"
-                    title="Visit my instagram profile">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://m.facebook.com/poovarasansivakumar2003" class="social-link" target="_blank"
-                    title="Visit my facebook profile">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://x.com/Poovara79282181" class="social-link" target="_blank"
-                    title="Visit my twitter profile">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-                <a href="https://www.youtube.com/@poovarasansivakumar2003" class="social-link" target="_blank"
-                    title="Visit my youtube channel">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://leetcode.com/u/poovarasansivakumar2003" class="social-link" target="_blank"
-                    title="Visit my LeetCode profile">
-                    <img src="./assets/img/leetcode.png" alt="leetcode" loading="eager" class="leetcode" />
-                </a>
-                <a href="https://t.me/poovarasansivakumar2003" class="social-link" target="_blank"
-                    title="Visit my telegram profile">
-                    <i class="fab fa-telegram"></i>
-                </a>
-            </div>
-            <div class="copyright">
-                <p><i class="fa-solid fa-copyright"></i> 2024 Poovarasan S, All rights reserved |
-                    <a href="https://github.com/poovarasansivakumar2003/Portfolio/blob/master/LICENSE.md"
-                        target="_blank" class="license-link">license</a> |
-                </p>
-            </div>
+        <div class="social-links">
+            <a href="https://github.com/poovarasansivakumar2003" class="social-link" target="_blank"
+                title="Visit my github profile">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/poovarasansivakumar2003/" class="social-link" target="_blank"
+                title="Visit my linkedin profile">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:poovarasansivakumar2003@gmail.com" class="social-link" title="Visit my mail">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://discord.gg/zw44H4sf" class="social-link" title="Visit my discord profile">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+            <a href="https://wa.me/qr/2YT2WUPUM6L6H1" class="social-link" target="_blank" title="Visit my whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/poovarasansivakumar2003/" class="social-link" target="_blank"
+                title="Visit my instagram profile">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://m.facebook.com/poovarasansivakumar2003" class="social-link" target="_blank"
+                title="Visit my facebook profile">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://x.com/Poovara79282181" class="social-link" target="_blank"
+                title="Visit my twitter profile">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@poovarasansivakumar2003" class="social-link" target="_blank"
+                title="Visit my youtube channel">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://leetcode.com/u/poovarasansivakumar2003" class="social-link" target="_blank"
+                title="Visit my LeetCode profile">
+                <img src="./assets/img/leetcode.png" alt="leetcode" loading="eager" class="leetcode" />
+            </a>
+            <a href="https://t.me/poovarasansivakumar2003" class="social-link" target="_blank"
+                title="Visit my telegram profile">
+                <i class="fab fa-telegram"></i>
+            </a>
+        </div>
+        <div class="copyright">
+            <p><i class="fa-solid fa-copyright"></i> 2024 Poovarasan S, All rights reserved |
+                <a href="https://github.com/poovarasansivakumar2003/Portfolio/blob/master/LICENSE.md" target="_blank"
+                    class="license-link">license</a> |
+            </p>
         </div>
     </div>
 </body>

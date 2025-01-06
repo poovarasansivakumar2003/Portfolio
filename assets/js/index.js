@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // navigation
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.querySelectorAll(".navLinks");
+const searchBtn = document.querySelector(".searchBtn")
 const settings = document.getElementById("settings");
 const settingsList = document.getElementById("settingsList");
 const fullScreenName = document.getElementById("fullScreenName");
@@ -53,10 +54,32 @@ hamburger.addEventListener("click", () => {
             link.classList.add("hidden");
         }
     });
+    settingsList.classList.add("hidden");
+});
+
+searchBtn.addEventListener("click", () => {
+    navLinks.forEach(link => {
+        if (link.classList.contains("hidden")) {
+            link.classList.remove("hidden");
+        } else {
+            link.classList.add("hidden");
+        }
+    });
+    settingsList.classList.add("hidden");
 });
 
 settings.addEventListener("click", () => {
+    navLinks.forEach(link => {       
+        link.classList.remove("hidden");
+    });
     settingsList.classList.toggle("hidden");
+});
+
+settingsList.addEventListener("click",()=>{
+    navLinks.forEach(link => {
+        link.classList.add("hidden");
+    });
+    settingsList.classList.add("hidden");
 });
 
 function toggleFullScreen() {
@@ -88,7 +111,6 @@ window.addEventListener('DOMContentLoaded', () => {
         setTheme("system");
     }
 });
-
 
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -132,6 +154,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".lang"),
         document.querySelector(".trophy"),
         document.querySelector(".streak"),
+        document.querySelector(".gitContribution"),
+        document.querySelector(".contributions"),
         document.querySelector(".submit-btn"),
         document.querySelector(".buyMeCoffee")
     ].filter(Boolean);

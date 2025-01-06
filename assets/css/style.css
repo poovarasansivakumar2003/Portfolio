@@ -11,27 +11,18 @@
 :root {
     --primary: #f7b733;
     --secondary: #fc4a1a;
-    --bg-color: #f5f5f5;
-    --text-color: #191a1a;
-    --light: #ffffff;
-    --textbox: #f8f2ed;
     --transition: all 0.6s ease;
+    --bg-color: #f5f5f5;
+    --light: #ffffff;
+    --text-color: #191a1a;
+    --invert: 1;
 }
 
 .dark {
     --bg-color:  #191a1a;
-    --text-color: #ffffff;
     --light: #141515;
-    --transition: all 0.6s ease;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: var(--transition);
-    overflow-x: hidden ;
-    scroll-behavior: smooth;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    --text-color: #ffffff;
+    --invert: 0;
 }
 
 /* loading */
@@ -110,40 +101,25 @@ body {
     }
 }
 
+/* body */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    overflow-x: hidden ;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 /* navigation */
 nav{
     background-color: var(--light);
     color: var(--text-color);
-    width: fit-content;
-    min-width: 60px;
 }
 
-.search{
+.search, .feedback-textarea{
     background-color: var(--bg-color);
     color: var(--text-color);
-}
-
-/* credential details */
-#logout {
-    display: none;
-}
-
-#loggedUserFName,
-#loggedUserEmail,
-#loggedUserLName,
-.login,
-.view {
-    display: contents;
-}
-
-#userDetails {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    margin-top: 100px;
 }
 
 /* scroll animation */
@@ -171,10 +147,33 @@ section.active{
     animation: fadeInFloat 1.5s ease-in-out forwards, float 4s ease-in-out infinite;
 }
 
+/* credential details */
+#logout {
+    display: none;
+}
+
+#loggedUserFName,
+#loggedUserEmail,
+#loggedUserLName,
+.login,
+.view {
+    display: contents;
+}
+
+#userDetails {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    margin-top: 50px;
+}
+
 .hero-text,
 .skills,
 .stats,
 .lang,
+.gitContribution,
 .form-group,
 .buyMeCoffee {
     transform: translateX(-35px);
@@ -187,6 +186,7 @@ section.active{
 .skills.active,
 .stats.active,
 .lang.active,
+.gitContribution.active,
 .form-group.active,
 .buyMeCoffee.active {
     transform: translateX(0);
@@ -199,6 +199,7 @@ section.active{
 .box-item,
 .streak,
 .trophy,
+.contributions,
 .submit-btn {
     transform: translateX(35px);
     visibility: hidden;
@@ -211,6 +212,7 @@ section.active{
 .box-item.active,
 .streak.active,
 .trophy.active,
+.contributions.active,
 .submit-btn.active {
     transform: translateX(0);
     visibility: visible;
@@ -219,25 +221,11 @@ section.active{
 
 /* Hero Section */
 .hero {
-    width: 100%;
-    position: relative;
     overflow: hidden;
 }
 
-.hero-content {
-    position: relative;
-    max-width: 1440px;
-}
-
-.hero-text {
-    flex: 1;
-}
-
-.hero-image {
-    width: 300px;
-    height: auto;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+.hero-image{
+    width: 500px;
 }
 
 .aboutBox{
@@ -245,9 +233,14 @@ section.active{
     box-shadow: 0 10px 30px var(--light);
 }
 
-.resumeBtn{
+.resumeBtn, .submit-btn, .buyMeCoffee{
+    display: block;
+    width: fit-content;
+    margin: auto;
     background-color: var(--bg-color);
     color: var(--text-color);
+    border-color: var(--text-color);
+    transition: var(--transition);
 }
 
 /* Projects Section */
@@ -295,7 +288,7 @@ section.active{
     align-items: center;
     padding: 20px;
     background-color: var(--light);
-    box-shadow: 0 10px 30px var(--light);
+    box-shadow: 0 10px 30px var(--bg-color);
     color: var(--text-color);
 }
 
@@ -323,6 +316,7 @@ section.active{
     margin-top: 20px;
     width: 25px;
     height: 25px;
+    filter: invert(var(--invert));
 }
 
 .flip-box-button {
@@ -338,17 +332,14 @@ section.active{
     text-transform: uppercase;
 }
 
+.trophy, .gitContribution{
+    padding: 10px;
+    background-color: #141321;
+}
+
+/* feedback */
 .feedback-form{
     background-color: var(--light);
-}
-
-.feedback-textarea{
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-.submit-btn{
-    color: var(--text-color);
 }
 
 /* Modal Styles */
@@ -501,10 +492,11 @@ section.active{
 }
 
 /* Contact Section */
-.contact {
+.contact {    
+    background-color: var(--light);
+    color: var(--text-color);
     backdrop-filter: blur(10px);
     padding: 2rem;
-    color: #fff;
     text-align: center;
     position: relative;
 }
@@ -516,7 +508,7 @@ section.active{
 .footer-section h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #f8f8f8;
+    color: var(--text-color);
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -528,7 +520,7 @@ section.active{
 }
 
 .footer-links a {
-    color: #fff;
+    color: var(--text-color);
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: 400;
@@ -550,7 +542,7 @@ section.active{
 }
 
 .social-link {
-    color: #fff;
+    color: var(--text-color);
     font-size: 2.5rem;
     transition: transform 0.3s ease, color 0.3s ease;
 }
