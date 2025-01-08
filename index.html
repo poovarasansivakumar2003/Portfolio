@@ -77,6 +77,8 @@
     </script>
 </head>
 
+<!-- <body oncontextmenu="return false"> -->
+
 <body>
     <!-- Loader -->
     <div class="loader" id="loader">
@@ -188,7 +190,7 @@
     <section class="ml-[64px] md:ml-[64px] p-10 mb-20" id="about">
         <h2 class="text-4xl font-bold mb-[35px] section-title">About Me</h2>
         <div
-            class="flex flex-col p-10 md:p-20 rounded-xl shadow-lg gap-4 space-y-6 shadow-lg transition-transform hover:translate-y-[-5px] hover:shadow-2xl aboutBox">
+            class="flex flex-col p-10 md:p-20 rounded-xl gap-4 space-y-6 shadow-lg transition-transform hover:translate-y-[-5px] hover:shadow-2xl aboutBox">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
                 <div class="stat-item">
                     <span class="stat-number text-3xl font-bold">2+</span>
@@ -505,21 +507,22 @@
                     <div class="rating-group flex flex-row-reverse justify-center gap-4 my-4">
                         <input type="radio" name="Rating" id="Star5" value="5" class="hidden">
                         <label for="Star5"
-                            class="text-4xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
+                            class="star sm:text-4xl text-2xl text-gray-400 cursor-pointer transition-transform hover:text-yellow-500 hover:scale-110">★</label>
                         <input type="radio" name="Rating" id="Star4" value="4" class="hidden">
                         <label for="Star4"
-                            class="text-4xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
+                            class="star sm:text-4xl text-2xl text-gray-400 cursor-pointer transition-transform hover:text-yellow-500 hover:scale-110">★</label>
                         <input type="radio" name="Rating" id="Star3" value="3" class="hidden">
                         <label for="Star3"
-                            class="text-4xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
+                            class="star sm:text-4xl text-2xl text-gray-400 cursor-pointer transition-transform hover:text-yellow-500 hover:scale-110">★</label>
                         <input type="radio" name="Rating" id="Star2" value="2" class="hidden">
                         <label for="Star2"
-                            class="text-4xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
+                            class="star sm:text-4xl text-2xl text-gray-400 cursor-pointer transition-transform hover:text-yellow-500 hover:scale-110">★</label>
                         <input type="radio" name="Rating" id="Star1" value="1" class="hidden">
                         <label for="Star1"
-                            class="text-4xl text-gray-400 cursor-pointer transition-transform hover:text-primary hover:scale-110 hover:text-yellow-500">★</label>
+                            class="star sm:text-4xl text-2xl text-gray-400 cursor-pointer transition-transform hover:text-yellow-500 hover:scale-110">★</label>
                     </div>
                 </div>
+
                 <button type="submit"
                     class="submit-btn backdrop-blur-md border py-2 px-8 mt-6 rounded-lg hover:translate-y-[-2px]">
                     Submit Feedback
@@ -536,39 +539,57 @@
         </div>
 
         <!-- Payment Modal -->
-        <div id="paymentModal" class="modal">
-            <div class="modal-content">
-                <button class="close-btn" onclick="closeModal()">×</button>
-                <h2 class="modal-title">Support Us</h2>
-                <p class="modal-subtitle">Choose your preferred payment method:</p>
-                <div class="payment-options">
-                    <div class="payment-option" onclick="showPaymentForm('card')">
-                        <i class="fas fa-credit-card"></i>
-                        <p>Card Payment</p>
+        <div id="paymentModal" class="modal inset-0  z-10 hidden overflow-auto pt-16">
+            <div
+                class="modal-content mx-auto px-6 py-4 border border-gray-400 rounded-lg shadow-xl w-full max-w-lg h-auto">
+
+                <h2 class="modal-title text-2xl text-center font-bold mb-2">Support Us</h2>
+                <p class="modal-subtitle text-base text-center text-gray-600 mb-5">Choose your preferred payment method:
+                </p>
+
+                <!-- Payment Options -->
+                <div class="payment-options flex flex-row justify-center gap-[10px] mb-5">
+                    <div class="payment-option cursor-pointer text-center p-4 border border-gray-300 rounded-lg w-1/2 transition-all ease-in-out hover:scale-105"
+                        onclick="showPaymentForm('card')">
+                        <i class="fas fa-credit-card text-2xl text-light mb-3"></i>
+                        <p class="sm:text-lg text-sm text-light">Card Payment</p>
                     </div>
-                    <div class="payment-option" onclick="showPaymentForm('upi')">
-                        <i class="fas fa-mobile-alt"></i>
-                        <p>UPI Payment</p>
+                    <div class="payment-option cursor-pointer text-center p-4 border border-gray-300 rounded-lg w-1/2 transition-all ease-in-out hover:scale-105"
+                        onclick="showPaymentForm('upi')">
+                        <i class="fas fa-mobile-alt text-2xl text-light mb-3"></i>
+                        <p class="sm:text-lg text-sm text-light">UPI Payment</p>
                     </div>
                 </div>
-                <div id="cardPayment" class="payment-form">
-                    <div class="form-group">
-                        <label>Card Number</label>
-                        <input type="text" placeholder="1234 5678 9012 3456">
+
+                <!-- Card Payment Form -->
+                <div id="cardPayment" class="payment-form hidden text-center mt-5">
+                    <div class="form-group mb-4 w-4/5 mx-auto text-left">
+                        <label class="text-base font-semibold sm:text-lg text-sm text-light">Card Number</label>
+                        <input type="text" placeholder="1234 5678 9012 3456"
+                            class="w-full p-3 mb-3 border border-gray-300 rounded-md text-base">
                     </div>
-                    <div class="form-group">
-                        <label>Expiry Date</label>
-                        <input type="text" placeholder="MM/YY">
+                    <div class="form-group mb-4 w-4/5 mx-auto text-left">
+                        <label class="text-base font-semibold sm:text-lg text-sm text-light">Expiry Date</label>
+                        <input type="text" placeholder="MM/YY"
+                            class="w-full p-3 mb-3 border border-gray-300 rounded-md text-base">
                     </div>
-                    <div class="form-group">
-                        <label>CVV</label>
-                        <input type="text" placeholder="123">
+                    <div class="form-group mb-4 w-4/5 mx-auto text-left">
+                        <label class="text-base font-semibold sm:text-lg text-sm text-light">CVV</label>
+                        <input type="text" placeholder="123"
+                            class="w-full p-3 mb-3 border border-gray-300 rounded-md text-base">
                     </div>
-                    <button class="pay-button">Pay ₹100</button>
+                    <button class="mt-8 backdrop-blur-md border py-2 px-8 mt-6 rounded-lg hover:translate-y-[-2px] ">
+                        Pay ₹100
+                    </button>
                 </div>
-                <div id="upiPayment" class="payment-form">
-                    <img src="./assets/img/upiscanner.jpg" alt="UPI QR Code" class="upi-qr">
-                    <button class="pay-button">Pay ₹100</button>
+
+                <!-- UPI Payment Form -->
+                <div id="upiPayment" class="payment-form hidden text-center flex-col items-center mt-5">
+                    <img src="./assets/img/upiscanner.jpg" alt="UPI QR Code"
+                        class="upi-qr w-4/5 mt-5 rounded-lg shadow-lg">
+                    <button class="mt-8 backdrop-blur-md border py-2 px-8 mt-6 rounded-lg hover:translate-y-[-2px] ">
+                        Pay ₹100
+                    </button>
                 </div>
             </div>
         </div>

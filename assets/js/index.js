@@ -240,13 +240,5 @@ function showModal() {
 
 function showPaymentForm(paymentType) {
     document.getElementById("cardPayment").style.display = (paymentType === "card") ? "block" : "none";
-    document.getElementById("upiPayment").style.display = (paymentType === "upi") ? "block" : "none";
+    document.getElementById("upiPayment").style.display = (paymentType === "upi") ? "flex" : "none";
 }
-
-function closeModal() {
-    modal.style.display = "none";
-}
-
-window.onclick = (event) => {
-    if (event.target === modal) modal.style.display = "none";
-};

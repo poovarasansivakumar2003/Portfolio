@@ -220,10 +220,6 @@ section.active{
 }
 
 /* Hero Section */
-.hero {
-    overflow: hidden;
-}
-
 .hero-image{
     width: 500px;
 }
@@ -288,7 +284,7 @@ section.active{
     align-items: center;
     padding: 20px;
     background-color: var(--light);
-    box-shadow: 0 10px 30px var(--bg-color);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     color: var(--text-color);
 }
 
@@ -342,154 +338,22 @@ section.active{
     background-color: var(--light);
 }
 
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--dark);
-    overflow: none;
-    padding-top: 60px;
+/* Custom CSS for hover effect */
+input[name="Rating"]:checked ~ label,
+input[name="Rating"]:checked ~ label ~ label {
+    color: gold;
 }
 
-.modal-content {
-    background-color: var(--dark);
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 100%;
-    height: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+input[name="Rating"]:hover ~ label,
+input[name="Rating"]:hover ~ label ~ label {
+    color: gold;
 }
 
-/* Close button styles */
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: var(--light);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
+input[name="Rating"]:checked ~ label,
+input[name="Rating"]:checked ~ label ~ label {
+    color: gold;
 }
 
-.close-btn:hover {
-    color: #f44336;
-}
-
-.modal-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.modal-subtitle {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    color: #666;
-}
-
-/* Payment Options */
-.payment-options {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.payment-option {
-    cursor: pointer;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 45%;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.payment-option:hover {
-    background-color: #f1f1f1;
-    transform: scale(1.05);
-}
-
-.payment-option i {
-    font-size: 2rem;
-    color: var(--light);
-    margin-bottom: 10px;
-}
-
-.payment-option p {
-    font-size: 1.2rem;
-    color: var(--light);
-}
-
-.payment-option:hover i,
-.payment-option:hover p {
-    color: var(--dark);
-}
-
-/* Payment Forms */
-.payment-form {
-    display: none;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.payment-form .form-group {
-    margin-bottom: 15px;
-    text-align: left;
-    width: 80%;
-    margin: 10px auto;
-}
-
-.payment-form label {
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--light);
-    display: block;
-    margin-bottom: 5px;
-}
-
-.payment-form input {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-}
-
-.payment-form button {
-    background: linear-gradient(45deg, var(--secondary), var(--primary));
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.payment-form button:hover {
-    background: linear-gradient(45deg, var(--secondary), var(--primary));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    ;
-}
-
-.upi-qr {
-    width: 80%;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 /* Contact Section */
 .contact {    
