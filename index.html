@@ -35,6 +35,8 @@
     <link rel="icon" href="./assets/img/favicon.png" type="image/png">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/icons@3.0.1/dist/cjs/index.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@coreui/icons@3.0.1/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="./assets/js/loginauth.js"></script>
@@ -77,7 +79,8 @@
     </script>
 </head>
 
-<body oncontextmenu="return false">
+<!-- <body oncontextmenu="return false"> -->
+<body>
     <!-- Loader -->
     <div class="loader" id="loader">
         <div class="loader-text">
@@ -160,7 +163,7 @@
 
     <!-- userDetails-->
     <section class="text-center ml-[64px] md:ml-[64px] gap-4" id="userDetails">
-        <p class="text-4xl font-bold section-title">Welcome, <span id="loggedUserFName">User</span><span
+        <p class="text-4xl font-bold section-title bg-clip-text text-transparent">Welcome, <span id="loggedUserFName">User</span><span
                 id="loggedUserLName">Name</span></p>
         <p class="text-lg md:text-xl">Email: <span id="loggedUserEmail">email@example.com</span></p>
         <p>Go below for more info.. <br></p>
@@ -170,10 +173,9 @@
     <!-- Hero Section -->
     <section class="hero ml-[64px] md:ml-[64px]" id="home">
         <!-- Hero Content -->
-        <div class="hero-content flex flex-col md:flex-row items-center justify-center gap-8 px-4 md:px-16 py-10">
+        <div class="min-h-screen hero-content flex flex-col md:flex-row items-center justify-center gap-8 px-4 md:px-16 py-10">
             <div class="hero-text text-center md:text-left">
-                <h1 class="text-4xl text-center px-10 md:text-5xl mb-[10px] md:text-left font-bold md:text-left section-title text-transparent bg-clip-text"
-                    id="headTyping"></h1>
+                <h1 class="text-4xl text-center px-10 md:text-5xl mb-[10px] md:text-left font-bold section-title bg-clip-text" id="headTyping"></h1>
                 <p class="text-lg px-10 md:text-xl">Information Science & Engineering student at UVCE, passionate about
                     innovative solutions, Arduino projects, graphic design, and web development.</p>
             </div>
@@ -186,7 +188,9 @@
 
     <!-- About section -->
     <section class="ml-[64px] md:ml-[64px] p-10 mb-20" id="about">
-        <h2 class="text-4xl font-bold mb-[35px] section-title">About Me</h2>
+        <h2 class="text-4xl font-bold mb-[35px] section-title bg-clip-text text-transparent">
+            About Me
+        </h2>        
         <div
             class="flex flex-col p-10 md:p-20 rounded-xl gap-4 space-y-6 shadow-lg transition-transform hover:translate-y-[-5px] hover:shadow-2xl aboutBox">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
@@ -282,7 +286,7 @@
 
     <!-- Projects Section -->
     <section class="ml-[64px] md:ml-[64px] mb-20" id="projects">
-        <h2 class="text-4xl font-bold mb-[35px] section-title">Featured Projects</h2>
+        <h2 class="text-4xl font-bold mb-[35px] section-title bg-clip-text text-transparent">Featured Projects</h2>
         <div class="projects">
             <div class="box-item">
                 <div class="flip-box">
@@ -469,7 +473,7 @@
 
     <!-- GitHub -->
     <section class="ml-[64px] md:ml-[64px] mb-20" id="github">
-        <h2 class="text-4xl font-bold mb-[35px] section-title">Github Profile</h2>
+        <h2 class="text-4xl font-bold mb-[35px] section-title bg-clip-text text-transparent">Github Profile</h2>
         <div class="githubMaterial grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-4 sm:p-8 md:p-12 lg:p-16">
             <img src="https://github-readme-stats.vercel.app/api?username=poovarasansivakumar2003&theme=radical&hide_border=false&include_all_commits=true&count_private=true"
                 alt="stats" class="stats w-full h-auto my-auto max-w-md" loading="lazy" />
@@ -489,10 +493,10 @@
 
     <!-- feedback -->
     <section class="ml-[64px] md:ml-[64px] mb-20" id="feedback">
-        <h2 class="text-4xl font-bold mb-[35px] section-title">Your Feedback Matters</h2>
-        <div class="feedback-section mx-auto w-auto p-5 md:py-10 px-8 md:w-3/5 md:mx-auto">
+        <h2 class="text-4xl font-bold mb-[35px] section-title bg-clip-text text-transparent">Your Feedback Matters</h2>
+        <div class="feedback-section mx-auto w-auto fit-content p-5 md:py-10 px-6 md:w-3/5 md:mx-auto">
             <form
-                class="feedback-form backdrop-blur-md p-8 rounded-2xl shadow-lg transition-transform hover:translate-y-[-5px] hover:shadow-2xl"
+                class="feedback-form backdrop-blur-md p-9 px-10 rounded-2xl shadow-lg transition-transform hover:translate-y-[-5px] hover:shadow-2xl"
                 id="feedbackForm">
                 <div class="form-group mb-6">
                     <label for="Feedback" class="block mb-2 font-medium">Share Your Thoughts</label>
@@ -502,7 +506,7 @@
 
                 <div class="form-group mb-6">
                     <label class="block mb-2 font-medium">Rate Your Experience</label>
-                    <div class="rating-group flex flex-row-reverse justify-center gap-4 my-4">
+                    <div class="rating-group flex flex-row-reverse justify-center gap-2 my-4 md:gap-4">
                         <input type="radio" name="Rating" id="Star5" value="5" class="hidden">
                         <label for="Star5"
                             class="star sm:text-4xl text-2xl text-gray-400 cursor-pointer transition-transform hover:text-yellow-500 hover:scale-110">★</label>
@@ -526,8 +530,6 @@
                     Submit Feedback
                 </button>
             </form>
-
-
         </div>
 
         <!-- Buy Me Coffee Button -->
@@ -595,7 +597,7 @@
 
 
     <!-- Contact Section -->
-    <div class="ml-[30px] md:ml-[30px] contact" id="contact">
+    <div class="ml-[64px] md:ml-[64px] contact" id="contact">
         <div class="footer-section">
             <h3>Quick Links</h3>
             <nav class="footer-links">
@@ -606,7 +608,7 @@
             </nav>
         </div>
 
-        <h2 class="text-2xl font-bold section-title" style="animation: none;">Connect With Me</h2>
+        <h2 class="text-2xl font-bold section-title bg-clip-text text-transparent" style="animation: none;">Connect With Me</h2>
 
         <div class="social-links">
             <a href="https://github.com/poovarasansivakumar2003" class="social-link" target="_blank"
@@ -644,7 +646,7 @@
             </a>
             <a href="https://leetcode.com/u/poovarasansivakumar2003" class="social-link" target="_blank"
                 title="Visit my LeetCode profile">
-                <img src="./assets/img/leetcode.png" alt="leetcode" loading="eager" class="leetcode" />
+                <i class="cib-leetcode"></i>
             </a>
             <a href="https://t.me/poovarasansivakumar2003" class="social-link" target="_blank"
                 title="Visit my telegram profile">

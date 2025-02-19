@@ -16,25 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
 // top button
 document.addEventListener("DOMContentLoaded", () => {
     const topButton = document.createElement("button");
-    topButton.innerHTML = "&#8593;"; 
-    topButton.className = "scroll-to-top hidden fixed bottom-6 right-6 bg-orange-500 text-white font-bold px-4 py-2 rounded-full shadow-lg transition-opacity duration-300 ease-in-out";
+    topButton.innerHTML = `<i class="fas fa-chevron-up"></i>`; 
+    topButton.className =
+        "scroll-to-top fixed bottom-6 right-6 bg-orange-500 text-white text-lg w-10 h-10 flex items-center justify-center rounded-full shadow-md transition-all duration-300 ease-in-out transform scale-0 opacity-0 hover:bg-orange-600 hover:shadow-lg focus:outline-none";
+
+    topButton.setAttribute("aria-label", "Scroll to top");
     document.body.appendChild(topButton);
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 200) {
-            topButton.classList.remove("hidden");
-            topButton.classList.add("visible");
+            topButton.classList.add("scale-100", "opacity-100");
         } else {
-            topButton.classList.remove("visible");
-            topButton.classList.add("hidden");
+            topButton.classList.remove("scale-100", "opacity-100");
         }
     });
 
     topButton.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });
 
